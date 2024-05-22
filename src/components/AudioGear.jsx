@@ -1,0 +1,34 @@
+import React from 'react'
+import Card from './Card'
+import BestAudioGear from '../assets/best-gear.jpg'
+
+function AudioGear() {
+    return (
+        <section>
+            <div className='my-32 flex justify-center'>
+                <div className="w-5/6 flex items-center justify-between">
+                    <div className="w-6/12">
+                        <h2 className='text-5xl font-black tracking-[3px] leading-[1.1]'>
+                            BRINGING YOU THE
+                            <br />
+                            <span className='text-orange-600 me-[10px]'>BEST</span>
+                            AUDIO GEAR
+                        </h2>
+                        <p className='text-gray-400 text-[15px] mt-6'>
+                            Located at the heart of New York City, Audiophile is the premier store for high
+                            end headphones, earphones, speakers, and audio accessories. We have a large showroom
+                            and luxury demonstration rooms available for you to browse and experience a wide
+                            range of our products. Stop by our store to meet some of the fantastic people who
+                            make Audiophile the best place to buy your portable audio equipment.
+                        </p>
+                    </div>
+                    <div className="w-6/12 grid place-items-end">
+                        <Card bgImage={BestAudioGear} isBgImage={true} height="570px" width="500px" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default AudioGear
