@@ -37,15 +37,12 @@ function HomeProduct({ height, bgColor, titleSize, titleColor, productImage, tit
                     </div>
                 </div>
             ) : (
-                <div style={{ height: height, backgroundColor: bgColor, ...backgroundStyle }} className={mainContDefaultCls}>
-                    <div className='ms-24 h-full w-3/12 flex flex-col from-black to-white items-start justify-center z-[1]'>
+                <div style={{ padding: '0 24px', justifyContent: 'start', height: height, ...backgroundStyle, backgroundImage: `url(${productImage})`, backgroundSize: 'cover' }} className={mainContDefaultCls}>
+                    <div className='ps-24 h-full flex flex-col items-start justify-center z-[1]'>
                         <h2 style={{ marginBottom: '35px', fontSize: titleSize, color: titleColor, letterSpacing: titleLetterSpacing }} className='text-6xl font-black'>
                             {titleName}
                         </h2>
                         <CTA bgColor='' btnTextColorOnHover='white' border='1px solid black' hoverBgColor='black' />
-                    </div>
-                    <div className='w-9/12 h-full' style={{backgroundImage: `url(${productImage})`, backgroundSize: 'cover', backgroundPosition: '-350px 0px'}}>
-                        <img className='' alt="" />
                     </div>
                 </div>
             )}
