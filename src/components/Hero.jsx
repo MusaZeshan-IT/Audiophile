@@ -21,7 +21,7 @@ function Hero() {
                     <br />
                     enthusiast.
                 </p>
-                <CTA bgColor='#d87d4a' hoverBgColor='rgb(251,175,130)' />
+                <CTA bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
             </div>
         </div>
     )
