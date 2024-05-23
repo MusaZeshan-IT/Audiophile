@@ -1,11 +1,11 @@
 import React from 'react'
 import HeroShared from '../components/HeroShared'
 import ProductCard from '../components/ProductCard'
+import NavList from '../components/NavList'
+import AudioGear from '../components/AudioGear'
 import xx99MarkTwo from '../assets/headphones/xx99-mark-two.jpg'
 import xx99MarkOne from '../assets/headphones/xx99-mark-one.jpg'
 import xx59 from '../assets/headphones/xx59.jpg'
-import NavList from '../components/NavList'
-import AudioGear from '../components/AudioGear'
 
 
 function Headphones() {
