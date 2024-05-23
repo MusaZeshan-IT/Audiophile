@@ -1,8 +1,9 @@
 import React from 'react'
+import HeroShared from '../components/HeroShared'
 
 function Headphones() {
   return (
-    <div>Headphones</div>
+    <HeroShared titleName='HEADPHONES' />
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import HeroShared from '../components/HeroShared'
 
 function Speakers() {
   return (
-    <div>Speakers</div>
+    <HeroShared titleName='SPEAKERS' />
   )
 }
 
