@@ -7,5 +7,13 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.content-empty::before': {
+          content: '""',
+        },
+      });
+    }
+  ],
 }
