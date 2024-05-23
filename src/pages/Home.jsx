@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <Hero />
-      <NavList />
+      <NavList marginTop="160px"/>
       <HomeProducts />
       <AudioGear />
     </div>

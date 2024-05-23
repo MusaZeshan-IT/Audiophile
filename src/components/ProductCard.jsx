@@ -14,8 +14,8 @@ function ProductCard({ productTitle, productImage, productDesc, isImageOnLeft, i
                             <strong className='tracking-[6px] font-normal text-[#d87d4a] text-[15px] mb-2'>NEW PRODUCT</strong>
                             : null
                         }
-                        <h2 className='text-4xl font-black mb-5 w-[80%]'>{productTitle}</h2>
-                        <p className='text-[16px] mb-6 leading-[26px] tracking-[-0.01em] text-[rgba(0,0,0,0.5)] w-11/12'>{productDesc}</p>
+                        <h2 className='text-4xl font-black mb-5 w-[60%]'>{productTitle}</h2>
+                        <p className='text-[16.5px] mb-6 leading-[26px] tracking-[-0.01em] text-[rgba(0,0,0,0.6)] w-11/12'>{productDesc}</p>
                         <CTA bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
                     </div>
                 </div>
@@ -26,8 +26,8 @@ function ProductCard({ productTitle, productImage, productDesc, isImageOnLeft, i
                             <strong className='tracking-[6px] font-normal text-[#d87d4a] text-[15px] mb-2'>NEW PRODUCT</strong>
                             : null
                         }
-                        <h2 className='text-4xl font-black mb-5 w-[80%]'>{productTitle}</h2>
-                        <p className='text-[16px] mb-6 leading-[26px] tracking-[-0.01em] text-[rgba(0,0,0,0.5)] w-11/12'>{productDesc}</p>
+                        <h2 className='text-4xl font-black mb-5 w-[60%]'>{productTitle}</h2>
+                        <p className='text-[16.5px] mb-6 leading-[26px] tracking-[-0.02em] text-[rgba(0,0,0,0.6)] w-11/12'>{productDesc}</p>
                         <CTA bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
                     </div>
                     <div className='w-7/12 rounded-lg flex justify-end'>
