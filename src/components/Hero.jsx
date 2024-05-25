@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroImage from '../assets/hero-img.jpg'
-import CTA from './CTA'
+import CTA from './ToViewCTA'
 
 function Hero() {
     return (

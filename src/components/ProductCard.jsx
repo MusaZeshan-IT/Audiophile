@@ -1,5 +1,5 @@
 import React from 'react'
-import CTA from './CTA'
+import CTA from './ToViewCTA';
 
 function ProductCard({ productTitle, productPath, productImage, productDesc, isImageOnLeft, isLabel = false }) {
     return (

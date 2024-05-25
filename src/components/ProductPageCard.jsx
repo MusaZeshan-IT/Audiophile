@@ -1,5 +1,6 @@
 import React from 'react'
-import CTA from './ToViewCTA'
+import ToCartCTA from './ToCartCTA'
+import SetCartItems from './SetCartItems';
 
 function ProductPageCard({ productTitle, productImage, productDesc, productPrice, isLabel = false }) {
     function handlePrice() {
@@ -22,8 +23,12 @@ function ProductPageCard({ productTitle, productImage, productDesc, productPrice
                         : null
                     }
                     <h2 className='text-[40px] tracking-[2px] leading-[45px] font-black mb-7 w-[60%]'>{productTitle}</h2>
-                    <p className='text-[16.5px] mb-6 leading-[26px] tracking-[-0.01em] text-[rgba(0,0,0,0.6)] w-11/12'>{productDesc}</p>
+                    <p className='text-[15.8px] mb-5 leading-[24px] tracking-[-0.01em] text-[rgba(0,0,0,0.58)] w-11/12'>{productDesc}</p>
                     <p className='text-lg font-black tracking-[1.5px]'>$ {handlePrice()}</p>
+                    <div className='flex mt-9'>
+                        <SetCartItems />
+                        <ToCartCTA />
+                    </div>
                 </div>
             </div>
         </div>
