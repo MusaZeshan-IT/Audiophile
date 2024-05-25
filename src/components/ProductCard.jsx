@@ -1,7 +1,7 @@
 import React from 'react'
 import CTA from './CTA'
 
-function ProductCard({ productTitle, productImage, productDesc, isImageOnLeft, isLabel = false }) {
+function ProductCard({ productTitle, productPath, productImage, productDesc, isImageOnLeft, isLabel = false }) {
     return (
         <div className='grid place-items-center'>
             {isImageOnLeft ?
@@ -16,7 +16,7 @@ function ProductCard({ productTitle, productImage, productDesc, isImageOnLeft, i
                         }
                         <h2 className='text-4xl font-black mb-5 w-[60%]'>{productTitle}</h2>
                         <p className='text-[16.5px] mb-6 leading-[26px] tracking-[-0.01em] text-[rgba(0,0,0,0.6)] w-11/12'>{productDesc}</p>
-                        <CTA bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
+                        <CTA pathname={productPath} bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
                     </div>
                 </div>
                 :
@@ -28,7 +28,7 @@ function ProductCard({ productTitle, productImage, productDesc, isImageOnLeft, i
                         }
                         <h2 className='text-4xl font-black mb-5 w-[60%]'>{productTitle}</h2>
                         <p className='text-[16.5px] mb-6 leading-[26px] tracking-[-0.02em] text-[rgba(0,0,0,0.6)] w-11/12'>{productDesc}</p>
-                        <CTA bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
+                        <CTA pathname={productPath} bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
                     </div>
                     <div className='w-7/12 rounded-lg flex justify-end'>
                         <img className='h-full w-[80%] rounded-lg' src={productImage} alt="" />
