@@ -11,29 +11,29 @@ import yx1 from '../assets/earphones/YX1/yx1.jpg'
 
 // Importing Product Gallery Images
 // Headphone 1 Gallery
-import xx99MarkTwoGalleryImg1 from '../assets/headphones/XX99-Mark-Two/gallery/img-1'
-import xx99MarkTwoGalleryImg2 from '../assets/headphones/XX99-Mark-Two/gallery/img-2'
-import xx99MarkTwoGalleryImg3 from '../assets/headphones/XX99-Mark-Two/gallery/img-3'
+import xx99MarkTwoGalleryImg1 from '../assets/headphones/XX99-Mark-Two/gallery/img-1.jpg'
+import xx99MarkTwoGalleryImg2 from '../assets/headphones/XX99-Mark-Two/gallery/img-2.jpg'
+import xx99MarkTwoGalleryImg3 from '../assets/headphones/XX99-Mark-Two/gallery/img-3.jpg'
 // Headphone 2 Gallery
-import xx99MarkOneGalleryImg1 from '../assets/headphones/XX99-Mark-One/gallery/img-1'
-import xx99MarkOneGalleryImg2 from '../assets/headphones/XX99-Mark-One/gallery/img-2'
-import xx99MarkOneGalleryImg3 from '../assets/headphones/XX99-Mark-One/gallery/img-3'
+import xx99MarkOneGalleryImg1 from '../assets/headphones/XX99-Mark-One/gallery/img-1.jpg'
+import xx99MarkOneGalleryImg2 from '../assets/headphones/XX99-Mark-One/gallery/img-2.jpg'
+import xx99MarkOneGalleryImg3 from '../assets/headphones/XX99-Mark-One/gallery/img-3.jpg'
 // Headphone 3 Gallery
-import xx59GalleryImg1 from '../assets/headphones/XX59/gallery/img-1'
-import xx59GalleryImg2 from '../assets/headphones/XX59/gallery/img-2'
-import xx59GalleryImg3 from '../assets/headphones/XX59/gallery/img-3'
+import xx59GalleryImg1 from '../assets/headphones/XX59/gallery/img-1.jpg'
+import xx59GalleryImg2 from '../assets/headphones/XX59/gallery/img-2.jpg'
+import xx59GalleryImg3 from '../assets/headphones/XX59/gallery/img-3.jpg'
 // Speaker 1 Gallery
-import zx9GalleryImg1 from '../assets/speakers/ZX9/gallery/img-1'
-import zx9GalleryImg2 from '../assets/speakers/ZX9/gallery/img-2'
-import zx9GalleryImg3 from '../assets/speakers/ZX9/gallery/img-3'
+import zx9GalleryImg1 from '../assets/speakers/ZX9/gallery/img-1.jpg'
+import zx9GalleryImg2 from '../assets/speakers/ZX9/gallery/img-2.jpg'
+import zx9GalleryImg3 from '../assets/speakers/ZX9/gallery/img-3.jpg'
 // Speaker 2 Gallery
-import zx7GalleryImg1 from '../assets/speakers/ZX7/gallery/img-1'
-import zx7GalleryImg2 from '../assets/speakers/ZX7/gallery/img-2'
-import zx7GalleryImg3 from '../assets/speakers/ZX7/gallery/img-3'
+import zx7GalleryImg1 from '../assets/speakers/ZX7/gallery/img-1.jpg'
+import zx7GalleryImg2 from '../assets/speakers/ZX7/gallery/img-2.jpg'
+import zx7GalleryImg3 from '../assets/speakers/ZX7/gallery/img-3.jpg'
 // Earphone 1 Gallery
-import yx1GalleryImg1 from '../assets/speakers/YX1/gallery/img-1'
-import yx1GalleryImg2 from '../assets/speakers/YX1/gallery/img-2'
-import yx1GalleryImg3 from '../assets/speakers/YX1/gallery/img-3'
+import yx1GalleryImg1 from '../assets/earphones/YX1/gallery/img-1.jpg'
+import yx1GalleryImg2 from '../assets/earphones/YX1/gallery/img-2.jpg'
+import yx1GalleryImg3 from '../assets/earphones/YX1/gallery/img-3.jpg'
 
 // Making a list of products
 const ProductList = [
