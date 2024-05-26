@@ -1,18 +1,49 @@
 // Importing Product Images
-import xx99MarkTwo from '../assets/headphones/xx99-mark-two.jpg'
-import xx99MarkOne from '../assets/headphones/xx99-mark-one.jpg'
-import xx59 from '../assets/headphones/xx59.jpg'
-import zx9 from '../assets/speakers/zx9.jpg'
-import zx7 from '../assets/speakers/zx7.jpg'
-import yx1 from '../assets/earphones/yx1-earphones.jpg'
+// Headphones
+import xx99MarkTwo from '../assets/headphones/XX99-Mark-Two/xx99-mark-two.jpg'
+import xx99MarkOne from '../assets/headphones/XX99-Mark-One/xx99-mark-one.jpg'
+import xx59 from '../assets/headphones/XX59/xx59.jpg'
+// Speakers
+import zx9 from '../assets/speakers/ZX9/zx9.jpg'
+import zx7 from '../assets/speakers/ZX7/zx7.jpg'
+// Earphones
+import yx1 from '../assets/earphones/YX1/yx1.jpg'
+
+// Importing Product Gallery Images
+// Headphone 1 Gallery
+import xx99MarkTwoGalleryImg1 from '../assets/headphones/XX99-Mark-Two/gallery/img-1'
+import xx99MarkTwoGalleryImg2 from '../assets/headphones/XX99-Mark-Two/gallery/img-2'
+import xx99MarkTwoGalleryImg3 from '../assets/headphones/XX99-Mark-Two/gallery/img-3'
+// Headphone 2 Gallery
+import xx99MarkOneGalleryImg1 from '../assets/headphones/XX99-Mark-One/gallery/img-1'
+import xx99MarkOneGalleryImg2 from '../assets/headphones/XX99-Mark-One/gallery/img-2'
+import xx99MarkOneGalleryImg3 from '../assets/headphones/XX99-Mark-One/gallery/img-3'
+// Headphone 3 Gallery
+import xx59GalleryImg1 from '../assets/headphones/XX59/gallery/img-1'
+import xx59GalleryImg2 from '../assets/headphones/XX59/gallery/img-2'
+import xx59GalleryImg3 from '../assets/headphones/XX59/gallery/img-3'
+// Speaker 1 Gallery
+import zx9GalleryImg1 from '../assets/speakers/ZX9/gallery/img-1'
+import zx9GalleryImg2 from '../assets/speakers/ZX9/gallery/img-2'
+import zx9GalleryImg3 from '../assets/speakers/ZX9/gallery/img-3'
+// Speaker 2 Gallery
+import zx7GalleryImg1 from '../assets/speakers/ZX7/gallery/img-1'
+import zx7GalleryImg2 from '../assets/speakers/ZX7/gallery/img-2'
+import zx7GalleryImg3 from '../assets/speakers/ZX7/gallery/img-3'
+// Earphone 1 Gallery
+import yx1GalleryImg1 from '../assets/speakers/YX1/gallery/img-1'
+import yx1GalleryImg2 from '../assets/speakers/YX1/gallery/img-2'
+import yx1GalleryImg3 from '../assets/speakers/YX1/gallery/img-3'
 
 // Making a list of products
 const ProductList = [
     // Product 1
+    // Headphones 1
     {
         name: "XX99 MARK II HEADPHONES",
         urlName: "xx99-mark-2",
         image: xx99MarkTwo,
+        galleryImages: [],
         price: 2999,
         isNew: true,
         category: "headphones",
@@ -43,6 +74,7 @@ const ProductList = [
         desc: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     },
     // Product 2
+    // Headphones 2
     {
         name: "XX99 MARK I HEADPHONES",
         urlName: "xx99-mark-1",
@@ -73,6 +105,7 @@ const ProductList = [
         desc: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     },
     // Product 3
+    // Headphones 3
     {
         name: "XX59 HEADPHONES",
         urlName: "xx59",
@@ -103,6 +136,7 @@ const ProductList = [
         desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is an ideal companion at home or on the move.",
     },
     // Product 4
+    // Speakers 1
     {
         name: "ZX9 SPEAKERS",
         urlName: "zx9",
@@ -137,6 +171,7 @@ const ProductList = [
         desc: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     },
     // Product 5
+    // Speakers 2
     {
         name: "ZX7 SPEAKERS",
         urlName: "zx7",
@@ -171,6 +206,7 @@ const ProductList = [
         desc: "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
     },
     // Product 6
+    // Earphones 1
     {
         name: "YX1 EARPHONES",
         urlName: "yx1",
