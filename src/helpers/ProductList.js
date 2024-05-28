@@ -41,6 +41,7 @@ const ProductList = [
     // Headphones 1
     {
         name: "XX99 MARK II HEADPHONES",
+        shortName: "XX99 MARK II",
         urlName: "xx99-mark-2",
         image: xx99MarkTwo,
         galleryImages: [xx99MarkTwoGalleryImg1, xx99MarkTwoGalleryImg2, xx99MarkTwoGalleryImg3],
@@ -77,6 +78,7 @@ const ProductList = [
     // Headphones 2
     {
         name: "XX99 MARK I HEADPHONES",
+        shortName: "XX99 MARK I",
         urlName: "xx99-mark-1",
         image: xx99MarkOne,
         galleryImages: [xx99MarkOneGalleryImg1, xx99MarkOneGalleryImg2, xx99MarkOneGalleryImg3],
@@ -109,6 +111,7 @@ const ProductList = [
     // Headphones 3
     {
         name: "XX59 HEADPHONES",
+        shortName: "XX59",
         urlName: "xx59",
         image: xx59,
         galleryImages: [xx59GalleryImg1, xx59GalleryImg2, xx59GalleryImg3],
@@ -141,6 +144,7 @@ const ProductList = [
     // Speakers 1
     {
         name: "ZX9 SPEAKERS",
+        shortName: "ZX9",
         urlName: "zx9",
         image: zx9,
         galleryImages: [zx9GalleryImg1, zx9GalleryImg2, zx9GalleryImg3],
@@ -177,6 +181,7 @@ const ProductList = [
     // Speakers 2
     {
         name: "ZX7 SPEAKERS",
+        shortName: "ZX7",
         urlName: "zx7",
         image: zx7,
         galleryImages: [zx7GalleryImg1, zx7GalleryImg2, zx7GalleryImg3],
@@ -213,6 +218,7 @@ const ProductList = [
     // Earphones 1
     {
         name: "YX1 EARPHONES",
+        shortName: "YX1",
         urlName: "yx1",
         image: yx1,
         galleryImages: [yx1GalleryImg1, yx1GalleryImg2, yx1GalleryImg3],

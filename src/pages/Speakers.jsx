@@ -14,15 +14,15 @@ function Speakers() {
       {speakersList.map((speakerProduct, index) => {
         if (index === 0) {
           return (
-            <ProductCard key={index} isLabel={true} productDesc={speakerProduct.desc} productTitle={speakerProduct.name} productImage={speakerProduct.image} isImageOnLeft={true} />
+            <ProductCard key={index} productPath={speakerProduct.urlName} isLabel={true} productDesc={speakerProduct.desc} productTitle={speakerProduct.name} productImage={speakerProduct.image} isImageOnLeft={true} />
           )
         } else if (index === 1) {
           return (
-            <ProductCard key={index} productDesc={speakerProduct.desc} productTitle={speakerProduct.name} productImage={speakerProduct.image} isImageOnLeft={false} />
+            <ProductCard key={index} productPath={speakerProduct.urlName} productDesc={speakerProduct.desc} productTitle={speakerProduct.name} productImage={speakerProduct.image} isImageOnLeft={false} />
           )
         } else {
           return (
-            <ProductCard key={index} productDesc={speakerProduct.desc} productTitle={speakerProduct.name} productImage={speakerProduct.image} isImageOnLeft={true} />
+            <ProductCard key={index} productPath={speakerProduct.urlName} productDesc={speakerProduct.desc} productTitle={speakerProduct.name} productImage={speakerProduct.image} isImageOnLeft={true} />
           )
         }
       })}

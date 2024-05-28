@@ -3,7 +3,7 @@ import React from 'react'
 function ProductGallery({productImg1, productImg2, productImg3}) {
     return (
         <div className='w-full flex justify-center mt-28'>
-            <div className='w-5/6 flex h-[550px]'>
+            <div className='w-5/6 flex h-[580px]'>
                 <div className='w-[40%] flex flex-col justify-between'>
                     <div className='h-[47.7%] w-full'>
                         <img className='h-full w-full rounded-[10px]' src={productImg1} alt="" />
