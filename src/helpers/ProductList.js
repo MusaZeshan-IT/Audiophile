@@ -40,6 +40,7 @@ const ProductList = [
     // Product 1
     // Headphones 1
     {
+        id: 1,
         name: "XX99 MARK II HEADPHONES",
         shortName: "XX99 MARK II",
         urlName: "xx99-mark-2",
@@ -77,6 +78,7 @@ const ProductList = [
     // Product 2
     // Headphones 2
     {
+        id: 2,
         name: "XX99 MARK I HEADPHONES",
         shortName: "XX99 MARK I",
         urlName: "xx99-mark-1",
@@ -110,6 +112,7 @@ const ProductList = [
     // Product 3
     // Headphones 3
     {
+        id: 3,
         name: "XX59 HEADPHONES",
         shortName: "XX59",
         urlName: "xx59",
@@ -143,6 +146,7 @@ const ProductList = [
     // Product 4
     // Speakers 1
     {
+        id: 4,
         name: "ZX9 SPEAKERS",
         shortName: "ZX9",
         urlName: "zx9",
@@ -180,6 +184,7 @@ const ProductList = [
     // Product 5
     // Speakers 2
     {
+        id: 5,
         name: "ZX7 SPEAKERS",
         shortName: "ZX7",
         urlName: "zx7",
@@ -217,6 +222,7 @@ const ProductList = [
     // Product 6
     // Earphones 1
     {
+        id: 6,
         name: "YX1 EARPHONES",
         shortName: "YX1",
         urlName: "yx1",

@@ -2,7 +2,7 @@ import React from 'react'
 import ToCartCTA from './ToCartCTA'
 import SetCartItems from './SetCartItems';
 
-function ProductPageCard({ productTitle, productImage, productDesc, productPrice, isLabel = false }) {
+function ProductPageCard({ productId, productTitle, productImage, productDesc, productPrice, isLabel = false }) {
     function handlePrice() {
         if (productPrice > 999) {
             return productPrice.toLocaleString();
@@ -26,7 +26,7 @@ function ProductPageCard({ productTitle, productImage, productDesc, productPrice
                     <p className='text-[15.8px] mb-5 leading-[24px] tracking-[-0.01em] text-[rgba(0,0,0,0.58)] w-11/12'>{productDesc}</p>
                     <p className='text-lg font-black tracking-[1.5px]'>$ {handlePrice()}</p>
                     <div className='flex mt-9'>
-                        <SetCartItems />
+                        <SetCartItems productId={productId} />
                         <ToCartCTA />
                     </div>
                 </div>

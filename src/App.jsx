@@ -8,21 +8,24 @@ import Speakers from './pages/Speakers'
 import Earphones from './pages/Earphones'
 import ProductDetail from './pages/ProductDetail'
 import './App.css'
+import { CartContextProvider } from './context/CartContext'
 
 function App() {
   return (
     <div className='app'>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/headphones' element={<Headphones />} />
-          <Route path='/speakers' element={<Speakers />} />
-          <Route path='/earphones' element={<Earphones />} />
-          <Route path="/:category/:name" element={<ProductDetail />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <CartContextProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route path='/headphones' element={<Headphones />} />
+            <Route path='/speakers' element={<Speakers />} />
+            <Route path='/earphones' element={<Earphones />} />
+            <Route path="/:category/:name" element={<ProductDetail />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </CartContextProvider>
     </div>
   )
 }
