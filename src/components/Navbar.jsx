@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../assets/logo.svg'
 import { Link, NavLink } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ handleShowModal }) {
   const defaultClasses = "me-9 hover:text-orange-400";
   return (
     <div className='bg-[rgb(25,25,25)] text-white h-[90px] flex items-center justify-center'>
@@ -19,7 +19,9 @@ function Navbar() {
           <NavLink to="/earphones" className={({ isActive }) => isActive ? `${defaultClasses} text-orange-500` : defaultClasses}>EARPHONES</NavLink>
         </div>
         <div className="rightSide">
-          <i className='fa-solid fa-cart-shopping cursor-pointer fa-lg text-white'></i>
+          <button onClick={() => handleShowModal()} type="button" role='button'>
+            <i className='fa-solid fa-cart-shopping cursor-pointer fa-lg text-white'></i>
+          </button>
         </div>
       </div>
     </div>
