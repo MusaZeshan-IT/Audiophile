@@ -40,16 +40,32 @@ function Modal({ handleCloseModal, showModal }) {
             {/* Modal starts from here */}
             <div ref={modalRef} className='me-48 overflow-hidden mt-32 bg-white min-h-48 w-[370px] rounded-md p-7'>
                 {totalItemsInCart > 0 ? (
-                    <div className='w-full flex justify-between'>
-                        <span className='text-lg font-black tracking-[2px]'>
-                            <span>CART </span>
-                            <span className='text-lg'>(</span>
-                            <span className='text-[18.5px]'>{totalItemsInCart}</span>
-                            <span className='text-lg'>)</span>
-                        </span>
-                        <button onClick={removeAllItemsFromCart} className='text-gray-400 tracking-wide underline'>
-                            Remove All
-                        </button>
+                    <div>
+                        <div className='w-full flex justify-between'>
+                            <span className='text-lg font-black tracking-[2px]'>
+                                <span>CART </span>
+                                <span className='text-lg'>(</span>
+                                <span className='text-[18.5px]'>{totalItemsInCart}</span>
+                                <span className='text-lg'>)</span>
+                            </span>
+                            <button onClick={removeAllItemsFromCart} className='text-gray-400 tracking-wide underline'>
+                                Remove All
+                            </button>
+                        </div>
+                        <div className='w-full flex flex-col mt-6'>
+                            {productAddedToCartList.map((product) => (
+                                <div key={product.id} className='flex mb-6'>
+                                    <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
+                                    <div className='flex flex-col ml-4 justify-center ms-[9px]'>
+                                        <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
+                                        <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
+                                            <span className='me-[1.6px]'>$</span>
+                                            {handlePrice(product)}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 ) : (
                     <div className='w-full flex flex-col items-center'>
@@ -58,20 +74,6 @@ function Modal({ handleCloseModal, showModal }) {
                     </div>
                 )}
 
-                <div className='w-full flex flex-col mt-6'>
-                    {productAddedToCartList.map((product) => (
-                        <div key={product.id} className='flex mb-6'>
-                            <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
-                            <div className='flex flex-col ml-4 justify-center ms-[9px]'>
-                                <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
-                                <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
-                                    <span className='me-[1.6px]'>$</span>
-                                    {handlePrice(product)}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
             </div>
             {/* Modal ends here */}
         </div>
