@@ -1,8 +1,8 @@
 import React from 'react'
-import HeroShared from '../components/HeroShared'
-import ProductCard from '../components/ProductCard'
-import NavList from '../components/NavList'
-import AudioGear from '../components/AudioGear'
+import HeroShared from '../components/Shared/HeroShared'
+import ProductCard from '../components/Product/ProductCard'
+import NavList from '../components/Shared/NavList'
+import AudioGear from '../components/Shared/AudioGear'
 import ProductList from '../helpers/ProductList'
 
 function Earphones() {

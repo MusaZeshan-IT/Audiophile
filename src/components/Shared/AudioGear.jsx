@@ -1,6 +1,6 @@
 import React from 'react'
-import Card from './HomeCard'
-import BestAudioGear from '../assets/best-gear.jpg'
+import Card from '../Home/HomeCard'
+import BestAudioGear from '../../assets/best-gear.jpg'
 
 function AudioGear() {
     return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext'
 import Home from './pages/Home'
@@ -6,16 +6,12 @@ import Headphones from './pages/Headphones'
 import Earphones from './pages/Earphones'
 import Speakers from './pages/Speakers'
 import ProductDetail from './pages/ProductDetail'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import Navbar from './components/Common/Navbar'
+import Footer from './components/Common/Footer'
+import Modal from './components/Cart/Modal'
 import './App.css'
-import Modal from './components/Modal'
 
 function App() {
-  // useEffect(() => {
-  //   document.body.classList.add('overflow-hidden')
-  // })
-
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);

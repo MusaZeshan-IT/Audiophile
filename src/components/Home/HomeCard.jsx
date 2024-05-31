@@ -1,5 +1,5 @@
 import React from 'react'
-import CTA from './ToViewCTA';
+import CTA from '../Shared/ToViewCTA';
 
 function Card({ isBgImage = false, bgImage, padding, height = "320px", width, isHeading = false, isButton = false, titleName = '' }) {
     // Adding some default classes that would remain same on all the components

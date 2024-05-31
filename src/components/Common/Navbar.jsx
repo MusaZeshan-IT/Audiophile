@@ -1,12 +1,15 @@
-import React from 'react'
-import Logo from '../assets/logo.svg'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useContext } from 'react'
+import Logo from '../../assets/logo.svg'
+import { NavLink, Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext';
 
 function Navbar({ handleShowModal }) {
+  const { totalItemsInCart } = useContext(CartContext)
+
   const defaultClasses = "me-9 hover:text-orange-400";
   return (
     <div className='bg-[rgb(25,25,25)] text-white h-[90px] flex items-center justify-center'>
-      <div className='w-10/12 flex justify-between border-b border-zinc-700 py-[30px]'>
+      <div className='w-10/12 flex justify-between border-b border-zinc-700 py-[32.4px]'>
         <div className="leftSide">
           <Link to="/">
             <img src={Logo} alt="" />
@@ -19,8 +22,14 @@ function Navbar({ handleShowModal }) {
           <NavLink to="/earphones" className={({ isActive }) => isActive ? `${defaultClasses} text-orange-500` : defaultClasses}>EARPHONES</NavLink>
         </div>
         <div className="rightSide">
-          <button onClick={() => handleShowModal()} type="button" role='button'>
+          <button className='absolute' onClick={() => handleShowModal()} type="button" role='button'>
             <i className='fa-solid fa-cart-shopping cursor-pointer fa-lg text-white'></i>
+            {totalItemsInCart > 0 ? (
+              <div className='w-5 h-5 relative bottom-[34.5px] left-[12.5px] bg-[#d87d4a] rounded-[50%] flex items-center justify-center'>
+                <span className='text-[12px] font-semibold'>{totalItemsInCart}</span>
+              </div>
+            ) : (null)
+            }
           </button>
         </div>
       </div>

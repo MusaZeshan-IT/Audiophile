@@ -1,13 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import ProductList from '../helpers/ProductList';
-import AudioGear from '../components/AudioGear';
-import NavList from '../components/NavList';
-import ProductPageCard from '../components/ProductPageCard';
-import BackButton from '../components/BackButton';
-import Features from '../components/Features';
-import ProductGallery from '../components/ProductGallery';
-import Recommendation from '../components/Recommendation';
+import AudioGear from '../components/Shared/AudioGear';
+import NavList from '../components/Shared/NavList';
+import ProductPageCard from '../components/Product/ProductPageCard';
+import BackButton from '../components/Shared/BackButton';
+import Features from '../components/Shared/Features';
+import ProductGallery from '../components/Product/ProductGallery';
+import Recommendation from '../components/Product/Recommendation';
 
 function ProductDetail() {
     const { category, name } = useParams();

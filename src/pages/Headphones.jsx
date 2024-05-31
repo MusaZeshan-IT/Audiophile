@@ -1,10 +1,9 @@
 import React from 'react'
-import HeroShared from '../components/HeroShared'
-import ProductCard from '../components/ProductCard'
-import NavList from '../components/NavList'
-import AudioGear from '../components/AudioGear'
+import HeroShared from '../components/Shared/HeroShared'
+import NavList from '../components/Shared/NavList'
+import ProductCard from '../components/Product/ProductCard'
 import ProductList from '../helpers/ProductList'
-import BackButton from '../components/BackButton'
+import AudioGear from '../components/Shared/AudioGear'
 
 function Headphones() {
   // Filtering only Headphones from the ProductList

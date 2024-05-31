@@ -1,6 +1,6 @@
 import React from 'react'
-import ToCartCTA from './ToCartCTA'
-import SetCartItems from './SetCartItems';
+import ToCartCTA from '../Cart/ToCartCTA'
+import SetCartItems from '../Cart/SetCartItems';
 
 function ProductPageCard({ productId, productTitle, productImage, productDesc, productPrice, isLabel = false }) {
     function handlePrice() {
@@ -27,7 +27,7 @@ function ProductPageCard({ productId, productTitle, productImage, productDesc, p
                     <p className='text-lg font-black tracking-[1.5px]'>$ {handlePrice()}</p>
                     <div className='flex mt-9'>
                         <SetCartItems productId={productId} />
-                        <ToCartCTA />
+                        <ToCartCTA productId={productId} />
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Card from './HomeCard';
-import CardBig from './HomeCardBig'
-import HomeZX9Speaker from '../assets/home-zx9-speaker.png';
-import HomeZX7Speaker from '../assets/home-zx7-speaker.png';
-import HomeProductEarphones from '../assets/home-earphones.jpg';
+import Card from '../Home/HomeCard';
+import CardBig from '../Home/HomeCardBig'
+import HomeZX9Speaker from '../../assets/home-zx9-speaker.png';
+import HomeZX7Speaker from '../../assets/home-zx7-speaker.png';
+import HomeProductEarphones from '../../assets/home-earphones.jpg';
 
 
 function HomeProducts() {

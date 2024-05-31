@@ -1,8 +1,8 @@
 import React from 'react'
 import NavListItem from './NavListItem'
-import Headphones from '../assets/category-headphones.png'
-import Earphones from '../assets/category-earphones.png'
-import Speakers from '../assets/category-speakers.png'
+import Headphones from '../../assets/category-headphones.png'
+import Earphones from '../../assets/category-earphones.png'
+import Speakers from '../../assets/category-speakers.png'
 
 function NavList({ marginTop }) {
     return (

@@ -1,8 +1,8 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import NavList from '../components/NavList'
-import HomeProducts from '../components/HomeProducts'
-import AudioGear from '../components/AudioGear'
+import Hero from '../components/Home/Hero'
+import NavList from '../components/Shared/NavList'
+import HomeProducts from '../components/Home/HomeProducts'
+import AudioGear from '../components/Shared/AudioGear'
 
 function Home() {
   return (

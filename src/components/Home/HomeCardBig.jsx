@@ -1,6 +1,6 @@
 import React from 'react';
-import BgCirles from '../assets/pattern-circles.svg';
-import CTA from './ToViewCTA';
+import BgCirles from '../../assets/pattern-circles.svg';
+import CTA from '../Shared/ToViewCTA';
 
 function HomeProduct({ height, bgColor, titleSize, titleColor, productImage, titleLetterSpacing = '2.2px', titleName, imageOnLeft = true, mainContImg = true }) {
     const mainContDefaultCls = 'flex overflow-hidden justify-center mb-10 rounded-lg';

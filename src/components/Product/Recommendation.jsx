@@ -1,6 +1,6 @@
 import React from 'react'
-import ProductList from '../helpers/ProductList'
-import CTA from './ToViewCTA'
+import ProductList from '../../helpers/ProductList'
+import CTA from '../Shared/ToViewCTA'
 
 function Recommendation({ currentProduct }) {
     const filteredProducts = ProductList.filter((product) => {
