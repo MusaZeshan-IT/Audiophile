@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../../context/CartContext';
 import ShoppingCart from '../../assets/cart.svg';
 import ProductList from '../../helpers/ProductList';
+import SetCartItems from './SetCartItemsSmall';
 
 function Modal({ handleCloseModal, showModal }) {
     const { totalItemsInCart, removeAllItemsFromCart, cartItems } = useContext(CartContext);
@@ -54,14 +55,19 @@ function Modal({ handleCloseModal, showModal }) {
                         </div>
                         <div className='w-full flex flex-col mt-6'>
                             {productAddedToCartList.map((product) => (
-                                <div key={product.id} className='flex mb-6'>
-                                    <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
-                                    <div className='flex flex-col ml-4 justify-center ms-[9px]'>
-                                        <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
-                                        <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
-                                            <span className='me-[1.6px]'>$</span>
-                                            {handlePrice(product)}
-                                        </p>
+                                <div key={product.id} className='flex mb-6 justify-between items-center'>
+                                    <div className='flex'>
+                                        <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
+                                        <div className='flex flex-col ml-4 justify-center ms-[9px]'>
+                                            <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
+                                            <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
+                                                <span className='me-[1.6px]'>$</span>
+                                                {handlePrice(product)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='w-24 h-8'>
+                                        <SetCartItems productId={product.id} />
                                     </div>
                                 </div>
                             ))}
