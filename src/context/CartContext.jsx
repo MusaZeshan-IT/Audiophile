@@ -26,6 +26,7 @@ const getDefaultProducts = function () {
 // Retrieving stored cart items from local storage
 const getStoredCartItems = function () {
     const storedCartProducts = localStorage.getItem('storedCartItems')
+    console.log(storedCartProducts);
     return storedCartProducts ? JSON.parse(storedCartProducts) : null;
 }
 
@@ -88,6 +89,7 @@ export const CartContextProvider = ({ children }) => {
 
     // This function removes all items from the cart
     const removeAllItemsFromCart = function () {
+        setCartItems(getDefaultCart());
         setTotalItemsInCart(0);
         localStorage.removeItem('storedCartItems');
     }
