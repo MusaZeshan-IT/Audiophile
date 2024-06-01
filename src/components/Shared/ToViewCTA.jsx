@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function CTA({ bgColor = '#d87d4a', border = '', btnTextColor = 'black', btnTextColorOnHover = '', hoverBgColor, pathname }) {
     const defaultBtnClasses = 'font-semibold tracking-[2px] w-44 text-white text-[12px] px-[28px] py-[13.5px] rounded-[2.5px]'

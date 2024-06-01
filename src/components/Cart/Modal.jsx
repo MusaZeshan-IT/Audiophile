@@ -3,6 +3,7 @@ import { CartContext } from '../../context/CartContext';
 import ShoppingCart from '../../assets/cart.svg';
 import ProductList from '../../helpers/ProductList';
 import SetCartItems from './SetCartItemsSmall';
+import CTAButton from '../Shared/CTAButton';
 
 function Modal({ handleCloseModal, showModal }) {
     const { totalItemsInCart, removeAllItemsFromCart, cartItems } = useContext(CartContext);
@@ -17,6 +18,22 @@ function Modal({ handleCloseModal, showModal }) {
             return product.price;
         }
     }
+
+    function handleTotalAmount() {
+        let totalAmount = 0;
+        for (const productIndex in productAddedToCartList) {
+            const product = productAddedToCartList[productIndex]
+            const actualPrice = product.price * cartItems[product.id]
+            totalAmount += actualPrice
+        }
+        if (totalAmount > 999) {
+            return totalAmount.toLocaleString();
+        } else {
+            return totalAmount;
+        }
+    }
+
+    handleTotalAmount()
 
     useEffect(() => {
         function handleClickOutside(e) {
@@ -39,7 +56,7 @@ function Modal({ handleCloseModal, showModal }) {
     return (
         <div className='fixed overflow-hidden inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start'>
             {/* Modal starts from here */}
-            <div ref={modalRef} className='me-48 overflow-hidden mt-32 bg-white min-h-48 w-[370px] rounded-md p-7'>
+            <div ref={modalRef} className='me-48 overflow-hidden mt-32 bg-white min-h-48 w-[370px] rounded-md p-8'>
                 {totalItemsInCart > 0 ? (
                     <div>
                         <div className='w-full flex justify-between'>
@@ -71,6 +88,16 @@ function Modal({ handleCloseModal, showModal }) {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                        <div className='w-full flex justify-between mt-3'>
+                            <span className='text-gray-400 text-[15.5px]'>TOTAL</span>
+                            <span className='text-[rgb(27,27,27)] text-[17.5px] font-black tracking-[1px]'>
+                                <span className='me-[3px]'>$</span>
+                                {handleTotalAmount()}
+                            </span>
+                        </div>
+                        <div className='w-full mt-6'>
+                            <CTAButton name="CHECKOUT" />
                         </div>
                     </div>
                 ) : (

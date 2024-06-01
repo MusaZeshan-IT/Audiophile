@@ -26,7 +26,6 @@ const getDefaultProducts = function () {
 // Retrieving stored cart items from local storage
 const getStoredCartItems = function () {
     const storedCartProducts = localStorage.getItem('storedCartItems')
-    console.log(storedCartProducts);
     return storedCartProducts ? JSON.parse(storedCartProducts) : null;
 }
 
