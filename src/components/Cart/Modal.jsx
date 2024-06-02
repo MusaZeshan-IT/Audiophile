@@ -1,3 +1,4 @@
+// /components/Cart/Modal.js
 import React, { useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../../context/CartContext';
 import ShoppingCart from '../../assets/cart.svg';
@@ -12,33 +13,26 @@ function Modal({ handleCloseModal, showModal }) {
     const productAddedToCartList = ProductList.filter((product) => cartItems[product.id] > 0);
 
     function handlePrice(product) {
-        if (product.price > 999) {
-            return product.price.toLocaleString();
-        } else {
-            return product.price;
-        }
+        return product.price > 999 ? product.price.toLocaleString() : product.price;
     }
 
     function handleTotalAmount() {
         let totalAmount = 0;
         for (const productIndex in productAddedToCartList) {
-            const product = productAddedToCartList[productIndex]
-            const actualPrice = product.price * cartItems[product.id]
-            totalAmount += actualPrice
+            const product = productAddedToCartList[productIndex];
+            const actualPrice = product.price * cartItems[product.id];
+            totalAmount += actualPrice;
         }
-        if (totalAmount > 999) {
-            return totalAmount.toLocaleString();
-        } else {
-            return totalAmount;
-        }
+        return totalAmount > 999 ? totalAmount.toLocaleString() : totalAmount;
     }
-
-    handleTotalAmount()
 
     useEffect(() => {
         function handleClickOutside(e) {
             if (modalRef.current && !modalRef.current.contains(e.target)) {
+                console.log('Clicked outside modal, closing...');
                 handleCloseModal();
+            } else {
+                console.log('Clicked inside modal');
             }
         }
         if (showModal) {
@@ -49,13 +43,12 @@ function Modal({ handleCloseModal, showModal }) {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [showModal, handleCloseModal]);
 
-    if (showModal === false) {
+    if (!showModal) {
         return null;
     }
 
     return (
-        <div className='fixed overflow-hidden inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start'>
-            {/* Modal starts from here */}
+        <div className='z-30 fixed overflow-hidden inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start'>
             <div ref={modalRef} className='me-48 overflow-hidden mt-32 bg-white min-h-48 w-[370px] rounded-md p-8'>
                 {totalItemsInCart > 0 ? (
                     <div>
@@ -97,7 +90,7 @@ function Modal({ handleCloseModal, showModal }) {
                             </span>
                         </div>
                         <div className='w-full mt-6'>
-                            <CTAButton name="CHECKOUT" />
+                            <CTAButton name="CHECKOUT" pathname="./checkout" />
                         </div>
                     </div>
                 ) : (
@@ -106,9 +99,7 @@ function Modal({ handleCloseModal, showModal }) {
                         <img className='mt-4' src={ShoppingCart} alt="" height="100px" width="100px" />
                     </div>
                 )}
-
             </div>
-            {/* Modal ends here */}
         </div>
     );
 }

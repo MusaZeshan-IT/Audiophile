@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function CTAButton({ name, pathname }) {
-    const defaultBtnClasses = 'w-full font-semibold bg-[#d87d4a] hover:bg-[rgb(251,175,130)] tracking-[2px] text-white text-[12px] py-[13.5px]'
+    const defaultBtnClasses = 'cursor-pointer w-full font-semibold bg-[#d87d4a] hover:bg-[rgb(251,175,130)] tracking-[2px] text-white text-[12px] py-[13.5px]'
 
     return (
         <Link to={pathname}>

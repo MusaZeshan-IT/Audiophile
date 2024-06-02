@@ -11,14 +11,14 @@ function HomeProducts() {
         <section>
             <div className='w-full flex justify-center items-center'>
                 <div className='w-5/6'>
-                    <CardBig productImage={HomeZX9Speaker} height="550px" bgColor="#d87d4a" titleSize="60px" titleColor="white" titleLetterSpacing='7px' titleName="ZX9 SPEAKER" />
-                    <CardBig productImage={HomeZX7Speaker} mainContImg={false} height="330px" bgColor="rgb(231, 231, 231)" titleName="ZX7 SPEAKER" titleColor="black" titleSize="30px" imageOnLeft={false} />
+                    <CardBig pathName="./speakers/zx9" productImage={HomeZX9Speaker} height="550px" bgColor="#d87d4a" titleSize="60px" titleColor="white" titleLetterSpacing='7px' titleName="ZX9 SPEAKER" />
+                    <CardBig pathName="./speakers/zx7" productImage={HomeZX7Speaker} mainContImg={false} height="330px" bgColor="rgb(231, 231, 231)" titleName="ZX7 SPEAKER" titleColor="black" titleSize="30px" imageOnLeft={false} />
                     <div className="flex justify-between">
                         <div className='w-[48%]'>
                             <Card isBgImage={true} bgImage={HomeProductEarphones} />
                         </div>
                         <div className='w-[48%]'>
-                            <Card isHeading={true} titleName="YX1 EARPHONES" isButton={true} padding="96px" />
+                            <Card pathName="./earphones/yx1" isHeading={true} titleName="YX1 EARPHONES" isButton={true} padding="96px" />
                         </div>
                     </div>
                 </div>

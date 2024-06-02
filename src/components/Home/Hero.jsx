@@ -22,7 +22,7 @@ function Hero() {
                         <br />
                         enthusiast.
                     </p>
-                    <CTA bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
+                    <CTA pathname="./headphones/xx99-mark-2" bgColor='#d87d4a' btnTextColor='white' hoverBgColor='rgb(251,175,130)' />
                 </div>
             </div>
         </section>

@@ -1,7 +1,7 @@
 import React from 'react'
 import CTA from '../Shared/ToViewCTA';
 
-function Card({ isBgImage = false, bgImage, padding, height = "320px", width, isHeading = false, isButton = false, titleName = '' }) {
+function Card({ pathName, isBgImage = false, bgImage, padding, height = "320px", width, isHeading = false, isButton = false, titleName = '' }) {
     // Adding some default classes that would remain same on all the components
     const mainContDefaultCls = `flex overflow-hidden justify-center mb-10 rounded-lg bg-[rgb(241,241,241)]`;
 
@@ -22,7 +22,7 @@ function Card({ isBgImage = false, bgImage, padding, height = "320px", width, is
                         : null
                     }
                     {isButton ?
-                        <CTA bgColor='' btnTextColorOnHover='white' border='1px solid black' hoverBgColor='black' />
+                        <CTA pathname={pathName} bgColor='' btnTextColorOnHover='white' border='1px solid black' hoverBgColor='black' />
                         : null
                     }
                 </div>

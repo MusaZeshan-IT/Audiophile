@@ -6,6 +6,7 @@ import Headphones from './pages/Headphones'
 import Earphones from './pages/Earphones'
 import Speakers from './pages/Speakers'
 import ProductDetail from './pages/ProductDetail'
+import Checkout from './pages/Checkout'
 import Navbar from './components/Common/Navbar'
 import Footer from './components/Common/Footer'
 import Modal from './components/Cart/Modal'
@@ -28,6 +29,7 @@ function App() {
             <Route path='/speakers' element={<Speakers />} />
             <Route path='/earphones' element={<Earphones />} />
             <Route path="/:category/:name" element={<ProductDetail />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
         </Router>

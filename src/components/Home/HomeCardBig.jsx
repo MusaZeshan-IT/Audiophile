@@ -2,7 +2,7 @@ import React from 'react';
 import BgCirles from '../../assets/pattern-circles.svg';
 import CTA from '../Shared/ToViewCTA';
 
-function HomeProduct({ height, bgColor, titleSize, titleColor, productImage, titleLetterSpacing = '2.2px', titleName, imageOnLeft = true, mainContImg = true }) {
+function HomeProduct({ pathName, height, bgColor, titleSize, titleColor, productImage, titleLetterSpacing = '2.2px', titleName, imageOnLeft = true, mainContImg = true }) {
     const mainContDefaultCls = 'flex overflow-hidden justify-center mb-10 rounded-lg';
 
     // This checks whether you want to add the background image to the main container or not
@@ -33,7 +33,7 @@ function HomeProduct({ height, bgColor, titleSize, titleColor, productImage, tit
                             <br />
                             sound.
                         </p>
-                        <CTA bgColor='rgb(25,25,25)' btnTextColor='white' hoverBgColor='rgb(76, 76, 76)' />
+                        <CTA pathname={pathName} bgColor='rgb(25,25,25)' btnTextColor='white' hoverBgColor='rgb(76, 76, 76)' />
                     </div>
                 </div>
             ) : (
@@ -42,7 +42,7 @@ function HomeProduct({ height, bgColor, titleSize, titleColor, productImage, tit
                         <h2 style={{ marginBottom: '35px', fontSize: titleSize, color: titleColor, letterSpacing: titleLetterSpacing }} className='text-6xl font-black'>
                             {titleName}
                         </h2>
-                        <CTA bgColor='' btnTextColorOnHover='white' border='1px solid black' hoverBgColor='black' />
+                        <CTA pathname={pathName} bgColor='' btnTextColorOnHover='white' border='1px solid black' hoverBgColor='black' />
                     </div>
                 </div>
             )}
