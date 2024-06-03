@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import BackButton from '../components/Shared/BackButton';
 import DoubledInputField from '../components/Checkout/DoubledInputField';
 import InputBox from '../components/Checkout/InputBox';
 import CashOnDeliveryImg from '../assets/cash-on-delivery.svg';
+import { CartContext } from '../context/CartContext';
+import ProductList from '../helpers/ProductList';
+import SetCartItems from '../components/Cart/SetCartItemsSmall';
 
 function Checkout() {
+    const { cartItems } = useContext(CartContext);
     const [selectedOption, setSelectedOption] = useState('checkbox1');
+
+    const productAddedToCartList = ProductList.filter((product) => cartItems[product.id] > 0);
+
+    function handlePrice(product) {
+        return product.price > 999 ? product.price.toLocaleString() : product.price;
+    }
+
+    function handleTotalAmount() {
+        let totalAmount = 0;
+        for (const productIndex in productAddedToCartList) {
+            const product = productAddedToCartList[productIndex];
+            const actualPrice = product.price * cartItems[product.id];
+            totalAmount += actualPrice;
+        }
+        return totalAmount > 999 ? totalAmount.toLocaleString() : totalAmount;
+    }
 
     function handleRadioClick(id) {
         setSelectedOption(id);
@@ -16,7 +36,7 @@ function Checkout() {
             <BackButton marginValueTop="0" />
             <div className='w-full flex justify-center'>
                 <div className='w-5/6 flex justify-between'>
-                    <div className='bg-white w-[63%] rounded-md p-11'>
+                    <div className='bg-white w-[64.5%] rounded-lg p-11'>
                         <h1 className='font-black tracking-[1.5px] text-3xl'>CHECKOUT</h1>
                         <form action="">
                             {/* Billing Details Section */}
@@ -72,8 +92,25 @@ function Checkout() {
                             </div>
                         </form>
                     </div>
-                    <div className='bg-white w-[34%] rounded-md'>
-                        <h2>SUMMARY</h2>
+                    <div className='bg-white w-[32.5%] h-fit rounded-lg p-9'>
+                        <h2 className='font-black tracking-[1.2px] text-xl'>SUMMARY</h2>
+                        {productAddedToCartList.map((product) => (
+                            <div key={product.id} className='flex mb-6 justify-between items-center mt-5'>
+                                <div className='flex w-[80%]'>
+                                    <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
+                                    <div className='flex flex-col ml-4 justify-center ms-[18px]'>
+                                        <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
+                                        <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
+                                            <span className='me-[1.6px]'>$</span>
+                                            {handlePrice(product)}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className='w-[20%] h-8 flex justify-end'>
+                                    <span className='font-semibold text-gray-500'>x1</span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../../context/CartContext';
 import ShoppingCart from '../../assets/cart.svg';
 import ProductList from '../../helpers/ProductList';
-import SetCartItems from './SetCartItemsSmall';
+import SetCartItems from '../Cart/SetCartItemsSmall';
 import CTAButton from '../Shared/CTAButton';
 
 function Modal({ handleCloseModal, showModal }) {
@@ -29,18 +29,20 @@ function Modal({ handleCloseModal, showModal }) {
     useEffect(() => {
         function handleClickOutside(e) {
             if (modalRef.current && !modalRef.current.contains(e.target)) {
-                console.log('Clicked outside modal, closing...');
                 handleCloseModal();
-            } else {
-                console.log('Clicked inside modal');
             }
         }
         if (showModal) {
             document.addEventListener('mousedown', handleClickOutside);
+            document.body.style.overflow = 'hidden'; // Disable page scrolling
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
+            document.body.style.overflow = 'auto'; // Enable page scrolling
         }
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.body.style.overflow = 'auto'; // Enable page scroll on cleanup
+        };
     }, [showModal, handleCloseModal]);
 
     if (!showModal) {
@@ -48,8 +50,8 @@ function Modal({ handleCloseModal, showModal }) {
     }
 
     return (
-        <div className='z-30 fixed overflow-hidden inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start'>
-            <div ref={modalRef} className='me-48 overflow-hidden mt-32 bg-white min-h-48 w-[370px] rounded-md p-8'>
+        <div className='z-30 fixed overflow-y-auto inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start'>
+            <div ref={modalRef} className='me-48 overflow-auto mt-32 bg-white min-h-48 w-[370px] rounded-md p-8'>
                 {totalItemsInCart > 0 ? (
                     <div>
                         <div className='w-full flex justify-between'>

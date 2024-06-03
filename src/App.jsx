@@ -9,7 +9,7 @@ import ProductDetail from './pages/ProductDetail'
 import Checkout from './pages/Checkout'
 import Navbar from './components/Common/Navbar'
 import Footer from './components/Common/Footer'
-import Modal from './components/Cart/Modal'
+import Modal from './components/Common/Modal'
 import './App.css'
 
 function App() {
