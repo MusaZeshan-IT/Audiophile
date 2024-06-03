@@ -90,7 +90,7 @@ function Modal({ handleCloseModal, showModal }) {
                             </span>
                         </div>
                         <div className='w-full mt-6'>
-                            <CTAButton name="CHECKOUT" pathname="./checkout" />
+                            <CTAButton functionName={handleCloseModal} name="CHECKOUT" pathname="./checkout" />
                         </div>
                     </div>
                 ) : (
