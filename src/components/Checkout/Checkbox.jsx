@@ -1,29 +1,36 @@
-import React, { useRef } from 'react'
+// CheckBox.js
+import React from 'react';
 
-function CheckBox({ isDoubled = false, fieldName, fieldPlaceholder, fieldWidth = 48.8 }) {
-    const inputRef = useRef(null)
-    const handleClick = (e) => {
-        e.preventDefault();
-        if (inputRef.current) {
-            inputRef.current.style.borderColor = "#d87d4a"
-        }
-    }
+function CheckBox({ selectedOption, fieldName, fieldPlaceholder, fieldWidth = 48.8, idName, onClick }) {
+    const handleInputClick = () => {
+        onClick(idName);
+    };
 
     return (
-        <>
-            {isDoubled ? (
-                <div style={{ width: `${fieldWidth}% ` }}>
-                    <h4 className='font-semibold text-[12.5px]'>{fieldName}</h4>
-                    <input required={true} ref={inputRef} onClick={handleClick} id='checkBox' className='w-full border border-[#d0d5dd] h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wide' type="text" placeholder={fieldPlaceholder} />
+        <div style={{ width: `${fieldWidth}%` }}>
+            <label htmlFor={idName}>
+                <div
+                    onClick={handleInputClick}
+                    className={`cursor-pointer flex items-center w-full border h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wide ${selectedOption ? 'border-[#d87d4a]' : 'border-[#d0d5dd]'}`}
+                    type="text"
+                    placeholder={fieldPlaceholder}
+                >
+                    <div className='me-4 h-5 w-5 rounded-[50%] border border-[#ddd] outline-none transition-all duration-300 flex justify-center items-center'>
+                        <input
+                            className={`h-[10px] w-[10px] rounded-[50%] appearance-none checked:bg-[#d87d4a]`}
+                            id={idName}
+                            value={fieldName}
+                            type="radio"
+                            name="paymentMethod"
+                            checked={selectedOption}
+                            readOnly
+                        />
+                    </div>
+                    <span>{fieldName}</span>
                 </div>
-            ) : (
-                <div className='mt-[18px]' style={{ width: `${fieldWidth}% ` }}>
-                    <h4 className='font-semibold text-[12.5px]'>{fieldName}</h4>
-                    <input required={true} ref={inputRef} onClick={handleClick} id='checkBox' className='w-full border border-[#d0d5dd] h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wide' type="text" placeholder={fieldPlaceholder} />
-                </div>
-            )}
-        </>
-    )
+            </label>
+        </div>
+    );
 }
 
-export default CheckBox
+export default CheckBox;

@@ -36,7 +36,7 @@ function Checkout() {
                                     <h4 className='font-semibold text-[12.5px]'>Payment Method</h4>
                                 </div>
                                 <div className='w-6/12'>
-                                    <DoubledInputField isDoubledColumn={true} fieldPlaceholder1=""/>
+                                    <DoubledInputField isDoubledColumn={true} fieldName1="e-Money" fieldName2="Cash on Delivery" />
                                 </div>
                             </div>
                         </div>
