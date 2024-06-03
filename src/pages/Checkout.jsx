@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
-import BackButton from '../components/Shared/BackButton'
-import DoubledInputField from '../components/Checkout/DoubledInputField'
-import InputBox from '../components/Checkout/InputBox'
+import React, { useState } from 'react';
+import BackButton from '../components/Shared/BackButton';
+import DoubledInputField from '../components/Checkout/DoubledInputField';
+import InputBox from '../components/Checkout/InputBox';
+import CashOnDeliveryImg from '../assets/cash-on-delivery.svg';
 
 function Checkout() {
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    function handleRadioClick(id) {
+        setSelectedOption(id);
+    }
+
     return (
         <div className='w-full bg-[rgb(241,241,241)] pt-20 pb-14'>
             <BackButton marginValueTop="0" />
             <div className='w-full flex justify-center'>
                 <div className='w-5/6 flex justify-between'>
                     <div className='bg-white w-[63%] rounded-md p-11'>
-                        <h1 className='font-black tracking-[1px] text-3xl'>CHECKOUT</h1>
+                        <h1 className='font-black tracking-[1.5px] text-3xl'>CHECKOUT</h1>
                         <form action="">
                             {/* Billing Details Section */}
                             <div>
@@ -37,10 +44,31 @@ function Checkout() {
                                         <h4 className='font-semibold text-[12.5px]'>Payment Method</h4>
                                     </div>
                                     <div className='w-6/12'>
-                                        <DoubledInputField isDoubledColumn={true} fieldName1="e-Money" fieldName2="Cash on Delivery" />
+                                        <DoubledInputField
+                                            isDoubledColumn={true}
+                                            fieldName1="e-Money"
+                                            fieldName2="Cash on Delivery"
+                                            selectedOption={selectedOption}
+                                            handleRadioClick={handleRadioClick}
+                                        />
                                     </div>
                                 </div>
-                                <DoubledInputField fieldName1="e-Money Number" fieldPlaceholder1="238521993" fieldName2="e-Money PIN" fieldPlaceholder2="6891" />
+                                {selectedOption === "checkbox1" && (
+                                    <DoubledInputField
+                                        fieldName1="e-Money Number"
+                                        fieldPlaceholder1="238521993"
+                                        fieldName2="e-Money PIN"
+                                        fieldPlaceholder2="6891"
+                                    />
+                                )}
+                                {selectedOption === "checkbox2" && (
+                                    <div className='mt-10 flex justify-between items-center'>
+                                        <div className='w-[7.8%]'>
+                                            <img className='w-full' src={CashOnDeliveryImg} alt="" />
+                                        </div>
+                                        <p className='w-[86%] tracking-[0.1px] text-gray-400 leading-[26px] text-[15.5px]'>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be delayed.</p>
+                                    </div>
+                                )}
                             </div>
                         </form>
                     </div>
@@ -50,7 +78,7 @@ function Checkout() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Checkout
+export default Checkout;
