@@ -5,7 +5,7 @@ import InputBox from '../components/Checkout/InputBox';
 import CashOnDeliveryImg from '../assets/cash-on-delivery.svg';
 
 function Checkout() {
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState('checkbox1');
 
     function handleRadioClick(id) {
         setSelectedOption(id);
@@ -62,7 +62,7 @@ function Checkout() {
                                     />
                                 )}
                                 {selectedOption === "checkbox2" && (
-                                    <div className='mt-10 flex justify-between items-center'>
+                                    <div className='mt-12 flex justify-between items-center'>
                                         <div className='w-[7.8%]'>
                                             <img className='w-full' src={CashOnDeliveryImg} alt="" />
                                         </div>
