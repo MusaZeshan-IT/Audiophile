@@ -5,7 +5,7 @@ import InputBox from '../components/Checkout/InputBox';
 import CashOnDeliveryImg from '../assets/cash-on-delivery.svg';
 import { CartContext } from '../context/CartContext';
 import ProductList from '../helpers/ProductList';
-import SetCartItems from '../components/Cart/SetCartItemsSmall';
+import CTAButton from '../components/Shared/CTAButton';
 
 function Checkout() {
     const { cartItems } = useContext(CartContext);
@@ -24,11 +24,27 @@ function Checkout() {
             const actualPrice = product.price * cartItems[product.id];
             totalAmount += actualPrice;
         }
-        return totalAmount > 999 ? totalAmount.toLocaleString() : totalAmount;
+        return totalAmount;
+    }
+
+    function handleGrandTotal() {
+        const grandTotal = Number(handleTotalAmount()) + Number(handleVAT()) + 50;
+        return grandTotal;
+    }
+
+    function handleVAT() {
+        const vat = Number(handleTotalAmount()) * 0.20;
+        const vatRounded = Math.round(vat);
+        return vatRounded;
     }
 
     function handleRadioClick(id) {
         setSelectedOption(id);
+    }
+
+    function handleValue(fn) {
+        const valueWithCommas = fn() > 999 ? fn().toLocaleString() : fn()
+        return valueWithCommas;
     }
 
     return (
@@ -93,24 +109,56 @@ function Checkout() {
                         </form>
                     </div>
                     <div className='bg-white w-[32.5%] h-fit rounded-lg p-9'>
-                        <h2 className='font-black tracking-[1.2px] text-xl'>SUMMARY</h2>
+                        <h2 className='font-black tracking-[1.2px] text-xl mb-7'>SUMMARY</h2>
                         {productAddedToCartList.map((product) => (
                             <div key={product.id} className='flex mb-6 justify-between items-center mt-5'>
                                 <div className='flex w-[80%]'>
                                     <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
                                     <div className='flex flex-col ml-4 justify-center ms-[18px]'>
-                                        <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
-                                        <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
+                                        <p className='text-[rgb(0,0,0)] font-black tracking-[0.5px] text-[15.3px]'>{product.shortName}</p>
+                                        <p className='mt-1 text-[rgb(141,141,141)] font-bold tracking-widest text-[13px]'>
                                             <span className='me-[1.6px]'>$</span>
                                             {handlePrice(product)}
                                         </p>
                                     </div>
                                 </div>
                                 <div className='w-[20%] h-8 flex justify-end'>
-                                    <span className='font-semibold text-gray-500'>x1</span>
+                                    <span className='font-semibold text-gray-500 text-[16.6px]'>
+                                        <span className='text-sm me-[0.6px]'>x</span>
+                                        {cartItems[product.id]}
+                                    </span>
                                 </div>
                             </div>
                         ))}
+                        <div className='w-full flex justify-between mt-8'>
+                            <span className='text-gray-500 text-[16px]'>TOTAL</span>
+                            <span className='text-[rgb(27,27,27)] text-[17.5px] font-black tracking-[0.7px]'>
+                                <span className='me-[3px]'>$</span>
+                                {handleValue(handleTotalAmount)}
+                            </span>
+                        </div>
+                        <div className='w-full flex justify-between mt-2'>
+                            <span className='text-gray-500 text-[16px]'>SHIPPING</span>
+                            <span className='text-[rgb(27,27,27)] text-[17.5px] font-black tracking-[0.7px]'>
+                                <span className='me-[3px]'>$</span>
+                                50
+                            </span>
+                        </div>
+                        <div className='w-full flex justify-between mt-2'>
+                            <span className='text-gray-500 text-[16px]'>VAT (INCLUDED)</span>
+                            <span className='text-[rgb(27,27,27)] text-[17.5px] font-black tracking-[0.7px]'>
+                                <span className='me-[3px]'>$</span>
+                                {handleValue(handleVAT)}
+                            </span>
+                        </div>
+                        <div className='w-full flex justify-between mt-6 mb-8'>
+                            <span className='text-gray-500 text-[16px]'>GRAND TOTAL</span>
+                            <span className='text-[#d87d4a] text-[17.5px] font-black tracking-[0.7px]'>
+                                <span className='me-[3px]'>$</span>
+                                {handleValue(handleGrandTotal)}
+                            </span>
+                        </div>
+                        <CTAButton name="CONTINUE & PAY" pathname=""/>
                     </div>
                 </div>
             </div>
