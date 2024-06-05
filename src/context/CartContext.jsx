@@ -86,6 +86,18 @@ export const CartContextProvider = ({ children }) => {
         return total;
     }
 
+    const calculateTotalProductsInCart = function () {
+        let totalNumOfProducts = 0;
+        for (const cartItem in cartItems) {
+            const productQuantity = cartItems[cartItem];
+            if (productQuantity > 0) {
+                totalNumOfProducts++;
+            }
+        }
+        // The -1 is to account for the one product that is already being displayed in the success modal
+        return totalNumOfProducts - 1;
+    }
+
     // This function removes all items from the cart
     const removeAllItemsFromCart = function () {
         setCartItems(getDefaultCart());
@@ -116,6 +128,7 @@ export const CartContextProvider = ({ children }) => {
         removeItemsFromCart,
         setItemsToCart,
         removeAllItemsFromCart,
+        calculateTotalProductsInCart,
     }
 
     return (

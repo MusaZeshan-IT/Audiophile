@@ -1,12 +1,15 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import ProductList from '../../helpers/ProductList';
 import iconChecked from '../../assets/check-mark.svg';
 import CTAButton from '../Shared/CTAButton';
 
 function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) {
-    const { totalItemsInCart, removeAllItemsFromCart, cartItems } = useContext(CartContext);
+    const { cartItems, calculateTotalProductsInCart } = useContext(CartContext);
+    const [isDefaultProductDisplayed, setIsDefaultProductDisplayed] = useState(false);
     const modalRef = useRef(null);
+
+    console.log(calculateTotalProductsInCart());
 
     const productAddedToCartList = ProductList.filter((product) => cartItems[product.id] > 0);
 
@@ -49,6 +52,7 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
                     <div className='w-[55%] p-5 min-h-36 bg-[rgb(241,241,241)] rounded-s-lg'>
                         {productAddedToCartList.map((product) => (
                             <>
+                                {setIsDefaultProductDisplayed(true)}
                                 <div key={product.id} className='flex mb-6 justify-between items-center'>
                                     <div className='flex w-[80%]'>
                                         <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
@@ -72,14 +76,17 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
                                     </div>
                                 </div>
                                 <div className='flex justify-center font-semibold tracking-[1.5px] text-[rgb(141,141,141)] text-[11.5px]'>
-                                    <span>and 4 other item(s)</span>
+                                    <button className='hover:underline'>and {calculateTotalProductsInCart()} other item(s)</button>
                                 </div>
                             </>
                         ))}
                     </div>
-                    <div className='w-[45%] bg-[rgb(25,25,25)] rounded-e-lg'>
-                        <h3 className='text-gray-500'>GRAND TOTAL</h3>
-                        <p className='text-gray-200'>{handleValue(grandTotal)}</p>
+                    <div className='w-[45%] p-8 bg-[rgb(25,25,25)] rounded-e-lg flex flex-col justify-center'>
+                        <h3 className='text-[rgb(150,147,147)] font-semibold text-[15px] tracking-wide'>GRAND TOTAL</h3>
+                        <p className='text-white font-semibold tracking-wider text-[14.5px] mt-2'>
+                            <span className='me-[3.6px]'>$</span>
+                            {handleValue(grandTotal)}
+                        </p>
                     </div>
                 </div>
                 <CTAButton name="BACK TO HOME" pathname="/" />
