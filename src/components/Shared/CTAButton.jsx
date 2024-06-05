@@ -6,7 +6,7 @@ function CTAButton({ name, pathname, functionName }) {
 
     return (
         <Link to={pathname}>
-            <button onClick={() => {functionName()}} style={{ transition: 'all 0.4s ease' }} className={defaultBtnClasses}>{name}</button>
+            <button onClick={() => { functionName() }} style={{ transition: 'all 0.4s ease' }} className={defaultBtnClasses}>{name}</button>
         </Link>
     )
 }
