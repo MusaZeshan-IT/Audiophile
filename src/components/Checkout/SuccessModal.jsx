@@ -6,7 +6,6 @@ import CTAButton from '../Shared/CTAButton';
 
 function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) {
     const { cartItems, calculateTotalProductsInCart } = useContext(CartContext);
-    const [isDefaultProductDisplayed, setIsDefaultProductDisplayed] = useState(false);
     const modalRef = useRef(null);
 
     console.log(calculateTotalProductsInCart());
@@ -17,11 +16,9 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
         return product.price > 999 ? product.price.toLocaleString() : product.price;
     }
 
-
     useEffect(() => {
         function handleClickOutside(e) {
-            const isScrollbarClick = e.clientX >= document.documentElement.clientWidth || e.clientY >= document.documentElement.clientHeight;
-            if (modalRef.current && !modalRef.current.contains(e.target) && !isScrollbarClick) {
+            if (modalRef.current && !modalRef.current.contains(e.target)) {
                 handleCloseModal();
             }
         }
@@ -42,44 +39,79 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
         return null;
     }
 
+    console.log(calculateTotalProductsInCart());
+
     return (
-        <div className='z-30 fixed inset-0 bg-black bg-opacity-[0.4] flex justify-center items-center'>
+        <div className='z-30 fixed inset-0 bg-black bg-opacity-[0.5] flex justify-center items-center'>
             <div ref={modalRef} className='overflow-auto bg-white min-h-48 max-h-[90vh] w-[550px] rounded-md p-12 pointer-events-auto'>
                 <img src={iconChecked} alt="" />
                 <h1 className='font-black tracking-wide text-[33px] leading-[37px] mt-5 text-[rgb(25,25,25)]'>THANK YOU <br /> FOR YOUR ORDER</h1>
                 <p className='text-[rgb(161,161,161)] text-[15px] mt-6 tracking-[0.15px]'>You will receive an email confirmation shortly.</p>
                 <div className='flex mb-10 mt-8'>
-                    <div className='w-[55%] p-5 min-h-36 bg-[rgb(241,241,241)] rounded-s-lg'>
+                    <div className='w-[55%] p-5 min-h-36 flex flex-col justify-center bg-[rgb(241,241,241)] rounded-s-lg'>
                         {productAddedToCartList.map((product) => (
                             <>
-                                {setIsDefaultProductDisplayed(true)}
-                                <div key={product.id} className='flex mb-6 justify-between items-center'>
-                                    <div className='flex w-[80%]'>
-                                        <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
-                                        <div className='flex flex-col justify-center ms-[8px]'>
-                                            {product.evenShorterName ? (
-                                                <p className='text-[rgb(25,25,25)] font-black tracking-[0.5px] text-[15.3px]'>{product.evenShorterName}</p>
-                                            ) : (
-                                                <p className='text-[rgb(25,25,25)] font-black tracking-[0.5px] text-[15.3px]'>{product.shortName}</p>
-                                            )}
-                                            <p className='mt-1 text-[rgb(124,124,124)] font-bold tracking-widest text-[13px]'>
-                                                <span className='me-[1.6px]'>$</span>
-                                                {handlePrice(product)}
-                                            </p>
+                                {calculateTotalProductsInCart() > 1 ? (
+                                    <>
+                                        <div key={product.id} className='flex mb-6 justify-between items-center'>
+                                            <div className='flex w-[80%]'>
+                                                <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
+                                                <div className='flex flex-col justify-center ms-[8px]'>
+                                                    {product.evenShorterName ? (
+                                                        <p className='text-[rgb(25,25,25)] font-black tracking-[0.5px] text-[15.3px]'>{product.evenShorterName}</p>
+                                                    ) : (
+                                                        <p className='text-[rgb(25,25,25)] font-black tracking-[0.5px] text-[15.3px]'>{product.shortName}</p>
+                                                    )}
+                                                    <p className='mt-1 text-[rgb(124,124,124)] font-bold tracking-widest text-[13px]'>
+                                                        <span className='me-[1.6px]'>$</span>
+                                                        {handlePrice(product)}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className='w-[20%] flex justify-end'>
+                                                <span className='font-semibold text-[rgb(141,141,141)] text-[14.8px]'>
+                                                    <span className='text-[13px] me-[0.6px]'>x</span>
+                                                    {cartItems[product.id]}
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className='w-[20%] flex justify-end'>
-                                        <span className='font-semibold text-[rgb(141,141,141)] text-[14.8px]'>
-                                            <span className='text-[13px] me-[0.6px]'>x</span>
-                                            {cartItems[product.id]}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className='flex justify-center font-semibold tracking-[1.5px] text-[rgb(141,141,141)] text-[11.5px]'>
-                                    <button className='hover:underline'>and {calculateTotalProductsInCart()} other item(s)</button>
-                                </div>
+                                        <div className='flex justify-center font-semibold tracking-[1.5px] text-[rgb(141,141,141)] text-[11.5px]'>
+                                            <button className='hover:underline'>and {calculateTotalProductsInCart() - 1} other item(s)</button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div key={product.id} className='flex justify-center items-center'>
+                                            <div className='flex w-[80%]'>
+                                                <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
+                                                <div className='flex flex-col justify-center ms-[8px]'>
+                                                    {product.evenShorterName ? (
+                                                        <p className='text-[rgb(25,25,25)] font-black tracking-[0.5px] text-[15.3px]'>{product.evenShorterName}</p>
+                                                    ) : (
+                                                        <p className='text-[rgb(25,25,25)] font-black tracking-[0.5px] text-[15.3px]'>{product.shortName}</p>
+                                                    )}
+                                                    <p className='mt-1 text-[rgb(124,124,124)] font-bold tracking-widest text-[13px]'>
+                                                        <span className='me-[1.6px]'>$</span>
+                                                        {handlePrice(product)}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className='w-[20%] flex justify-end'>
+                                                <span className='font-semibold text-[rgb(141,141,141)] text-[14.8px]'>
+                                                    <span className='text-[13px] me-[0.6px]'>x</span>
+                                                    {cartItems[product.id]}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </>
                         ))}
+                        {calculateTotalProductsInCart() > 1 && (
+                            <div className='flex justify-center font-semibold tracking-[1.5px] text-[rgb(141,141,141)] text-[11.5px]'>
+                                <button className='hover:underline'>and {calculateTotalProductsInCart() - 1} other item(s)</button>
+                            </div>
+                        )}
                     </div>
                     <div className='w-[45%] p-8 bg-[rgb(25,25,25)] rounded-e-lg flex flex-col justify-center'>
                         <h3 className='text-[rgb(150,147,147)] font-semibold text-[15px] tracking-wide'>GRAND TOTAL</h3>
@@ -90,8 +122,8 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
                     </div>
                 </div>
                 <CTAButton name="BACK TO HOME" pathname="/" />
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
 

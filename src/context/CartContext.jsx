@@ -94,8 +94,7 @@ export const CartContextProvider = ({ children }) => {
                 totalNumOfProducts++;
             }
         }
-        // The -1 is to account for the one product that is already being displayed in the success modal
-        return totalNumOfProducts - 1;
+        return totalNumOfProducts;
     }
 
     // This function removes all items from the cart
