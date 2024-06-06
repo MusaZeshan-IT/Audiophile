@@ -128,7 +128,7 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
                         </div>
                     )}
                 </div>
-                <CTAButton buttonType='submit' name="BACK TO HOME" pathname="/" />
+                <CTAButton name="BACK TO HOME" pathname="/" />
             </div>
         </div>
     );

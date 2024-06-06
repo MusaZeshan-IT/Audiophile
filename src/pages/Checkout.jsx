@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import BackButton from '../components/Shared/BackButton';
 import DoubledInputField from '../components/Checkout/DoubledInputField';
 import InputBox from '../components/Checkout/InputBox';
@@ -15,6 +15,7 @@ function Checkout() {
 
     const { cartItems } = useContext(CartContext);
     const [selectedOption, setSelectedOption] = useState('checkbox1');
+    const formRef = useRef(null)
 
     const productAddedToCartList = ProductList.filter((product) => cartItems[product.id] > 0);
 
@@ -62,7 +63,7 @@ function Checkout() {
                         {/* Checkout */}
                         <div className='bg-white w-[64.5%] rounded-lg p-11'>
                             <h1 className='font-black tracking-[1.5px] text-3xl'>CHECKOUT</h1>
-                            <form action="" autoComplete='on'>
+                            <form ref={formRef} action="" method='post' autoComplete='on'>
                                 {/* Billing Details Section */}
                                 <div>
                                     <h3 className='text-[13.5px] text-[#d87d4a] font-bold tracking-[1.2px] mt-10 mb-6'>BILLING DETAILS</h3>
@@ -167,7 +168,7 @@ function Checkout() {
                                     {handleValue(handleGrandTotal)}
                                 </span>
                             </div>
-                            <CTAButton functionName={handleShowModal} name="CONTINUE & PAY" />
+                            <CTAButton formRef={formRef} buttonType='submit' functionName={handleShowModal} name="CONTINUE & PAY" />
                         </div>
                     </div>
                 </div>
