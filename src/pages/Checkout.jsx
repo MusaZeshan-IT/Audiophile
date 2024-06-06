@@ -54,7 +54,7 @@ function Checkout() {
 
     return (
         <div>
-            <SuccessModal showModal={showModal} handleCloseModal={handleCloseModal} grandTotal={handleGrandTotal} handleValue={handleValue}/>
+            <SuccessModal showModal={showModal} handleCloseModal={handleCloseModal} grandTotal={handleGrandTotal} handleValue={handleValue} />
             <div className='w-full bg-[rgb(241,241,241)] pt-20 pb-14'>
                 <BackButton marginValueTop="0" />
                 <div className='w-full flex justify-center'>
