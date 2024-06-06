@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 
-function InputBox({ isDoubled = false, isRequired = true, fieldName, fieldPlaceholder, fieldWidth = 48.8 }) {
+function InputBox({ isDoubled = false, isRequired = true, fieldName, fieldType = 'text', fieldPlaceholder, fieldWidth = 48.8 }) {
     const inputRef = useRef(null)
     const [inputValue, setInputValue] = useState('')
     const [hasError, setHasError] = useState(false)
@@ -34,7 +34,7 @@ function InputBox({ isDoubled = false, isRequired = true, fieldName, fieldPlaceh
                         <h4 className='font-semibold text-[12.5px]'>{fieldName}</h4>
                         {hasError && <p className='text-[#d87d4a] text-[12px] mt-1'>Field cannot be empty</p>}
                     </div>
-                    <input onChange={(e) => setInputValue(e.target.value)} onBlur={handleBlur} value={inputValue} required={isRequired} ref={inputRef} onClick={handleClick} className='w-full border border-[#d0d5dd] h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wider' type="text" placeholder={fieldPlaceholder} />
+                    <input type={fieldType} onChange={(e) => setInputValue(e.target.value)} onBlur={handleBlur} value={inputValue} required={isRequired} ref={inputRef} onClick={handleClick} className='w-full border border-[#d0d5dd] h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wider' placeholder={fieldPlaceholder} />
                 </div>
             ) : (
                 <div className='mt-[18px]' style={{ width: `${fieldWidth}% ` }}>
@@ -42,7 +42,7 @@ function InputBox({ isDoubled = false, isRequired = true, fieldName, fieldPlaceh
                         <h4 className='font-semibold text-[12.5px]'>{fieldName}</h4>
                         {hasError && <p className='text-[#d87d4a] text-[12px] mt-1'>Field cannot be empty</p>}
                     </div>
-                    <input onChange={(e) => setInputValue(e.target.value)} onBlur={handleBlur} value={inputValue} required={isRequired} ref={inputRef} onClick={handleClick} className='w-full border border-[#d0d5dd] h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wider' type="text" placeholder={fieldPlaceholder} />
+                    <input type={fieldType} onChange={(e) => setInputValue(e.target.value)} onBlur={handleBlur} value={inputValue} required={isRequired} ref={inputRef} onClick={handleClick} className='w-full border border-[#d0d5dd] h-12 rounded-lg mt-2 px-5 font-bold text-sm tracking-wider' placeholder={fieldPlaceholder} />
                 </div>
             )}
         </>

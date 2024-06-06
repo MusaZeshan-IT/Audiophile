@@ -2,7 +2,7 @@ import React from 'react';
 import InputBox from './InputBox';
 import CheckBox from './Checkbox';
 
-function DoubledInputField({ isDoubledColumn = false, fieldName1, fieldName2, fieldPlaceholder1, fieldPlaceholder2, selectedOption, handleRadioClick }) {
+function DoubledInputField({ isDoubledColumn = false, fieldName1, fieldName2, fieldPlaceholder1, fieldPlaceholder2, fieldType1, fieldType2, selectedOption, handleRadioClick }) {
     return (
         <>
             {isDoubledColumn ? (
@@ -26,8 +26,8 @@ function DoubledInputField({ isDoubledColumn = false, fieldName1, fieldName2, fi
                 </div>
             ) : (
                 <div className="w-full flex justify-between mt-[18px]">
-                    <InputBox isDoubled={true} fieldName={fieldName1} fieldPlaceholder={fieldPlaceholder1} />
-                    <InputBox isDoubled={true} fieldName={fieldName2} fieldPlaceholder={fieldPlaceholder2} />
+                    <InputBox isDoubled={true} fieldType={fieldType1} fieldName={fieldName1} fieldPlaceholder={fieldPlaceholder1} />
+                    <InputBox isDoubled={true} fieldType={fieldType2} fieldName={fieldName2} fieldPlaceholder={fieldPlaceholder2} />
                 </div>
             )}
         </>

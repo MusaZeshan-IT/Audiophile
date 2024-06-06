@@ -10,7 +10,11 @@ import SuccessModal from '../components/Checkout/SuccessModal';
 
 function Checkout() {
     const [showModal, setShowModal] = useState(false);
-    const handleShowModal = () => setShowModal(true);
+    const handleShowModal = () => {
+        if (formRef.current.reportValidity()) {
+            setShowModal(true);
+        }
+    }
     const handleCloseModal = () => setShowModal(false);
 
     const { cartItems } = useContext(CartContext);
@@ -67,9 +71,9 @@ function Checkout() {
                                 {/* Billing Details Section */}
                                 <div>
                                     <h3 className='text-[13.5px] text-[#d87d4a] font-bold tracking-[1.2px] mt-10 mb-6'>BILLING DETAILS</h3>
-                                    <DoubledInputField marginTop="10" fieldName1="Name" fieldPlaceholder1="Alexei Ward" fieldName2="Email Address" fieldPlaceholder2="alexei@mail.com" />
+                                    <DoubledInputField marginTop="10" fieldName1="Name" fieldPlaceholder1="Alexei Ward" fieldType2="email" fieldName2="Email Address" fieldPlaceholder2="alexei@mail.com" />
                                     <div>
-                                        <InputBox fieldName="Phone Number" fieldPlaceholder="+1 202-555-0136" />
+                                        <InputBox fieldName="Phone Number" fieldType='tel' fieldPlaceholder="+1 202-555-0136" />
                                     </div>
                                 </div>
                                 {/* Shipping Info Section */}
