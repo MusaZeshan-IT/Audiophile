@@ -2,7 +2,7 @@ import React from 'react';
 import InputBox from './InputBox';
 import CheckBox from './Checkbox';
 
-function DoubledInputField({ isDoubledColumn = false, fieldName1, fieldName2, fieldPlaceholder1, fieldPlaceholder2, fieldType1, fieldType2, selectedOption, handleRadioClick }) {
+function DoubledInputField({ isDoubledColumn = false, onChange1, onChange2, fieldName1, fieldName2, fieldPlaceholder1, fieldPlaceholder2, fieldType1, fieldType2, selectedOption, handleRadioClick }) {
     return (
         <>
             {isDoubledColumn ? (
