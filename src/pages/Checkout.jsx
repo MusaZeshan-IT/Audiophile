@@ -60,12 +60,12 @@ function Checkout() {
     return (
         <div>
             <SuccessModal showModal={showModal} handleCloseModal={handleCloseModal} grandTotal={handleGrandTotal} handleValue={handleValue} />
-            <div className='w-full bg-[rgb(241,241,241)] pt-20 pb-14'>
-                <BackButton marginValueTop="0" />
+            <div className='w-full bg-[rgb(241,241,241)] pt-20 pb-14 2xl:px-32 xl-custom:px-24 xl:px-24 lg-custom:px-16 px-8'>
+                <BackButton marginValueTop="0" width={100} display='inline-block' />
                 <div className='w-full flex justify-center'>
-                    <div className='w-5/6 flex justify-between'>
+                    <div className='w-full flex lg:flex-row flex-col justify-between'>
                         {/* Checkout */}
-                        <div className='bg-white w-[64.5%] rounded-lg p-11'>
+                        <div className='bg-white lg:w-[64.5%] w-full rounded-lg p-11'>
                             <h1 className='font-black tracking-[1.5px] text-3xl'>CHECKOUT</h1>
                             <form ref={formRef} action="" method='post' autoComplete='on'>
                                 {/* Billing Details Section */}
@@ -122,7 +122,7 @@ function Checkout() {
                             </form>
                         </div>
                         {/* Summary */}
-                        <div className='bg-white w-[32.5%] h-fit rounded-lg p-9'>
+                        <div className='bg-white lg:w-[32.5%] w-full lg:mt-0 mt-10 h-fit rounded-lg p-9'>
                             <h2 className='font-black tracking-[1.2px] text-xl mb-7'>SUMMARY</h2>
                             {productAddedToCartList.map((product) => (
                                 <div key={product.id} className='flex mb-6 justify-between items-center mt-5'>
