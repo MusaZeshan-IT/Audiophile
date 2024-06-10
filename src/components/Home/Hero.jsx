@@ -5,8 +5,8 @@ import './Hero.css'
 
 function Hero() {
     return (
-        <section className='lg:h-auto'>
-            <div className='bg-cont w-full xl:bg-[0_100%] lg:bg-[0_150%] bg-center 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 h-[610px] flex lg:justify-start justify-center'>
+        <section>
+            <div className='bg-cont w-full bg-center 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 h-[610px] flex lg:justify-start justify-center'>
                 <div>
                     <div className='w-full lg:mt-40 mt-32 lg:block flex flex-col items-center'>
                         <h1 className='flex flex-col'>

@@ -1,7 +1,6 @@
 .bg-cont {
   /* Initial styles */
   background-image: url("../../assets/hero-img.jpg");
-  background-size: 110%;
   background-repeat: no-repeat;
   width: 100%;
   height: 610px;
@@ -10,6 +9,7 @@
 @media screen and (max-width: 1024px) {
   .bg-cont {
     background-image: url("../../assets/hero-img.png");
+    background-size: 110%;
     background-color: rgb(25, 25, 25);
   }
 }
