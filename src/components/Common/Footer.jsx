@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className='w-full bg-[rgb(25,25,25)] sm:block flex justify-center relative 2xl:px-32 xl-custom:px-28 xl:px-24 lg-custom:px-16 px-8'>
+    <div className='w-full bg-[rgb(25,25,25)] sm:block flex justify-center relative 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
       <div className='content-empty::before block absolute sm:right-auto sm:left-auto h-1 w-[102px] bg-[rgb(216,125,74)]'></div>
       <div className='lg:pt-[75px] sm:pt-[60px] pt-[50px] pb-10'>
         {/* First Section */}

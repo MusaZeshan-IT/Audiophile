@@ -11,34 +11,33 @@ function Navbar({ handleShowModal, handleShowMenu, handleCloseMenu, showMenu }) 
   const renderCartBadge = () => {
     if (totalItemsInCart === 0) {
       return (
-        <i className='fa-solid fa-cart-shopping cursor-pointer text-[20px] text-white'></i>
+        <button className='' onClick={() => handleShowModal()} type="button" role='button'>
+
+          <i className='fa-solid fa-cart-shopping cursor-pointer text-[20px] text-white'></i>
+        </button>
       )
     }
     if (totalItemsInCart > 0 && totalItemsInCart <= 9) {
       return (
-        <div>
+        <button className='flex' onClick={() => handleShowModal()} type="button" role='button'>
           <i className='fa-solid fa-cart-shopping cursor-pointer text-[20px] text-white'></i>
-          <div className='w-[20px] h-[20px] relative bottom-[34.5px] left-[12.5px] bg-[#d87d4a] rounded-[50%] flex items-center justify-center'>
-            <span className='text-[12px] font-semibold tracking-[1px]'>{totalItemsInCart}</span>
-          </div>
-        </div>
+          <div className='bg-[#d87d4a] w-[20px] h-[20px] px-1 py-1 relative bottom-3 text-[14.5px] right-2 flex justify-center items-center rounded-[50%] font-semibold tracking-[1px]'>{totalItemsInCart}</div>
+        </button>
       );
     } else if (totalItemsInCart > 9) {
       return (
-        <div>
-          <i className='fa-solid fa-cart-shopping cursor-pointer text-[22px] text-white'></i>
-          <div className='w-[22px] h-[22px] relative bottom-[37px] left-[12.5px] bg-[#d87d4a] rounded-[50%] flex items-center justify-center'>
-            <span className='text-[11.6px] font-semibold tracking-[1px]'>{totalItemsInCart}</span>
-          </div>
-        </div>
+        <button className='flex' onClick={() => handleShowModal()} type="button" role='button'>
+          <i className='fa-solid fa-cart-shopping cursor-pointer text-[21px] text-white'></i>
+          <div className='bg-[#d87d4a] w-[22.5px] h-[22.5px] px-1 py-1 relative bottom-3 text-[13px] right-2 flex justify-center items-center rounded-[50%] font-semibold tracking-[1px]'>{totalItemsInCart}</div>
+        </button>
       );
     }
   };
 
   return (
-    <div className='bg-[rgb(25,25,25)] text-white h-[90px] flex items-center justify-center'>
-      <div className='w-full 2xl:px-32 xl-custom:px-24 xl:px-20 lg-custom:px-12 lg:px-7 px-5 flex justify-between border-b border-zinc-700 py-[32.4px]'>
-        <div className="leftSide">
+    <div className='bg-[rgb(25,25,25)] 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
+      <div className=' text-white h-[90px] items-center w-full flex justify-between border-b border-zinc-700 py-[32.4px]'>
+        <div className="">
           <div className='flex items-center'>
             <i onClick={() => handleShowMenu()} className={`${showMenu ? 'hidden' : 'block'} fa-solid fa-bars lg:hidden cursor-pointer text-[18.5px] me-8`}></i>
             <i onClick={() => handleCloseMenu()} className={`${showMenu ? 'block' : 'hidden'} fa-solid fa-xmark lg:hidden block cursor-pointer text-[18.5px] me-8`}></i>
@@ -47,16 +46,14 @@ function Navbar({ handleShowModal, handleShowMenu, handleCloseMenu, showMenu }) 
             </Link>
           </div>
         </div>
-        <div className="navLinks lg:block hidden tracking-[3px] font-bold text-[13px]">
+        <div className="lg:block hidden tracking-[3px] font-bold text-[13px]">
           <NavLink to="/" className={({ isActive }) => isActive ? `${defaultClasses} text-orange-500` : defaultClasses}>HOME</NavLink>
           <NavLink to="/headphones" className={({ isActive }) => isActive ? `${defaultClasses} text-orange-500` : defaultClasses}>HEADPHONES</NavLink>
           <NavLink to="/speakers" className={({ isActive }) => isActive ? `${defaultClasses} text-orange-500` : defaultClasses}>SPEAKERS</NavLink>
           <NavLink to="/earphones" className={({ isActive }) => isActive ? `${defaultClasses} text-orange-500` : defaultClasses}>EARPHONES</NavLink>
         </div>
-        <div className="rightSide me-10">
-          <button className='absolute' onClick={() => handleShowModal()} type="button" role='button'>
-            {renderCartBadge()}
-          </button>
+        <div>
+          {renderCartBadge()}
         </div>
       </div>
     </div>

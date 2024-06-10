@@ -5,8 +5,8 @@ import BestAudioGear from '../../assets/best-gear.jpg'
 function AudioGear() {
     return (
         <section>
-            <div className='my-32 flex justify-center'>
-                <div className="w-5/6 flex items-center justify-between">
+            <div className='my-32 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex justify-center'>
+                <div className="w-full flex items-center justify-between">
                     <div className="w-6/12">
                         <h2 className='text-5xl font-black tracking-[3px] leading-[1.1]'>
                             BRINGING YOU THE

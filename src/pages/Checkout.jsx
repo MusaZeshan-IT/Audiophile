@@ -60,7 +60,7 @@ function Checkout() {
     return (
         <div>
             <SuccessModal showModal={showModal} handleCloseModal={handleCloseModal} grandTotal={handleGrandTotal} handleValue={handleValue} />
-            <div className='w-full bg-[rgb(241,241,241)] pt-20 pb-14 2xl:px-32 xl-custom:px-24 xl:px-24 lg-custom:px-16 px-8'>
+            <div className='w-full bg-[rgb(241,241,241)] pt-20 pb-14 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
                 <BackButton marginValueTop="0" width={100} display='inline-block' />
                 <div className='w-full flex justify-center'>
                     <div className='w-full flex lg:flex-row flex-col justify-between'>

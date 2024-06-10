@@ -5,8 +5,8 @@ import CTA from '../Shared/ToViewCTA'
 function Hero() {
     return (
         <section>
-            <div className='w-full h-[610px] flex justify-center' style={{ backgroundImage: `url(${HeroImage})`, backgroundSize: 'cover', backgroundPosition: '0px 100%' }}>
-                <div className='w-10/12 absolute top-[245px]'>
+            <div className='w-full 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 h-[610px] flex justify-center' style={{ backgroundImage: `url(${HeroImage})`, backgroundSize: 'cover', backgroundPosition: '0px 100%' }}>
+                <div className='w-full mt-40'>
                     <h1 className='flex flex-col'>
                         <strong className='text-[rgb(145,145,145)] mb-3 text-[15px] tracking-[9px]'>NEW PRODUCT</strong>
                         <span className='text-[50px] leading-[1.2] text-white font-black tracking-widest'>
