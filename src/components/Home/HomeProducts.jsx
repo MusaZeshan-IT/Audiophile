@@ -11,7 +11,7 @@ function HomeProducts() {
         <section>
             <div className='w-full 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex justify-center items-center'>
                 <div className='w-full'>
-                    <CardBig pathName="./speakers/zx9" productImage={HomeZX9Speaker} height="550px" bgColor="#d87d4a" titleSize="60px" titleColor="white" titleLetterSpacing='7px' titleName="ZX9 SPEAKER" />
+                    <CardBig isResponsive={true} pathName="./speakers/zx9" productImage={HomeZX9Speaker} bgColor="#d87d4a" titleColor="white" titleLetterSpacing='7px' titleName="ZX9 SPEAKER" />
                     <CardBig pathName="./speakers/zx7" productImage={HomeZX7Speaker} mainContImg={false} height="330px" bgColor="rgb(231, 231, 231)" titleName="ZX7 SPEAKER" titleColor="black" titleSize="30px" imageOnLeft={false} />
                     <div className="flex justify-between">
                         <div className='w-[48%]'>
