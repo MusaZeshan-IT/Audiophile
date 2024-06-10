@@ -65,7 +65,7 @@ function Checkout() {
                 <div className='w-full flex justify-center'>
                     <div className='w-full flex lg:flex-row flex-col justify-between'>
                         {/* Checkout */}
-                        <div className='bg-white lg:w-[64.5%] w-full rounded-lg p-11'>
+                        <div className='bg-white lg:w-[64.5%] w-full rounded-lg lg:p-11 md:p-8 p-6'>
                             <h1 className='font-black tracking-[1.5px] text-3xl'>CHECKOUT</h1>
                             <form ref={formRef} action="" method='post' autoComplete='on'>
                                 {/* Billing Details Section */}
@@ -79,7 +79,7 @@ function Checkout() {
                                 {/* Shipping Info Section */}
                                 <div>
                                     <h3 className='text-[13.5px] text-[#d87d4a] font-bold tracking-[1.2px] mt-10 mb-6'>SHIPPING INFO</h3>
-                                    <InputBox marginTop="10" fieldWidth="100" fieldName="Your Address" fieldPlaceholder="1137 Williams Avenue" />
+                                    <InputBox marginTop="10" fieldName="Your Address" fieldPlaceholder="1137 Williams Avenue" />
                                     <DoubledInputField fieldName1="ZIP Code" fieldPlaceholder1="10001" fieldName2="City" fieldPlaceholder2="New York" />
                                     <div>
                                         <InputBox fieldName="Country" fieldPlaceholder="United States" />
@@ -88,11 +88,11 @@ function Checkout() {
                                 {/* Payment Details Section */}
                                 <div>
                                     <h3 className='text-[13.5px] text-[#d87d4a] font-bold tracking-[1.2px] mt-10 mb-6'>PAYMENT DETAILS</h3>
-                                    <div className='flex'>
-                                        <div className='w-6/12'>
+                                    <div className='flex sm-custom:flex-row flex-col'>
+                                        <div className='sm-custom:w-6/12 w-full'>
                                             <h4 className='font-semibold text-[12.5px]'>Payment Method</h4>
                                         </div>
-                                        <div className='w-6/12'>
+                                        <div className='sm-custom:w-6/12 w-full'>
                                             <DoubledInputField
                                                 isDoubledColumn={true}
                                                 fieldName1="e-Money"
@@ -111,18 +111,18 @@ function Checkout() {
                                         />
                                     )}
                                     {selectedOption === "checkbox2" && (
-                                        <div className='mt-12 flex justify-between items-center'>
-                                            <div className='w-[7.8%]'>
+                                        <div className='mt-12 flex xs-custom:flex-row flex-col xs-custom:justify-between items-center'>
+                                            <div className='md:w-[6%] sm-custom:w-[7%] xs-custom:w-[10%] w-[20%]'>
                                                 <img className='w-full' src={CashOnDeliveryImg} alt="" />
                                             </div>
-                                            <p className='w-[86%] tracking-[0.1px] text-gray-400 leading-[26px] text-[15.5px]'>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be delayed.</p>
+                                            <p className='xs-custom:w-[86%] xs-custom:mt-0 mt-5 w-full tracking-[0.1px] text-gray-400 leading-[26px] text-[15.5px]'>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be delayed.</p>
                                         </div>
                                     )}
                                 </div>
                             </form>
                         </div>
                         {/* Summary */}
-                        <div className='bg-white lg:w-[32.5%] w-full lg:mt-0 mt-10 h-fit rounded-lg p-9'>
+                        <div className='bg-white lg:w-[32.5%] w-full lg:mt-0 mt-10 h-fit rounded-lg lg:p-9 md:p-7 p-5'>
                             <h2 className='font-black tracking-[1.2px] text-xl mb-7'>SUMMARY</h2>
                             {productAddedToCartList.map((product) => (
                                 <div key={product.id} className='flex mb-6 justify-between items-center mt-5'>

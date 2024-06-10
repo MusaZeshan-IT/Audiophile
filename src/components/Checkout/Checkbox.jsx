@@ -1,13 +1,13 @@
 // CheckBox.js
 import React from 'react';
 
-function CheckBox({ selectedOption, fieldName, fieldPlaceholder, fieldWidth = 48.8, idName, onClick }) {
+function CheckBox({ selectedOption, fieldName, fieldPlaceholder, idName, onClick }) {
     const handleInputClick = () => {
         onClick(idName);
     };
 
     return (
-        <div style={{ width: `${fieldWidth}%` }}>
+        <div>
             <label htmlFor={idName}>
                 <div
                     onClick={handleInputClick}

@@ -10,11 +10,7 @@ function BackButton({ marginValueTop, width = 83.33, display = 'flex' }) {
     }
 
     return (
-<<<<<<< HEAD
-        <div style={{ marginTop: marginValueTop, display: display }} className='w-full justify-center mt-20 mb-14'>
-=======
-        <div style={{ marginTop: marginValueTop, display: display}} className='w-full justify-center mt-20 mb-14'>
->>>>>>> 2d21adc84701b5f03513f6b16ee5015e75b35418
+        <div style={{ marginTop: marginValueTop, display: display, width: width }} className='w-full justify-center mt-20 mb-14'>
             <div style={{ width: width }}>
                 <Link onClick={handleLinkClick}>
                     <span className='text-[rgb(131,131,131)] tracking-wider font-semibold hover:underline'>Go Back</span>

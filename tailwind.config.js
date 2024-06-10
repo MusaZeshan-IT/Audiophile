@@ -21,6 +21,8 @@ export default {
         'md-custom': '896px', // Custom screen size between medium and large
         'lg-custom': '1152px', // Custom screen size between large and extra-large
         'xl-custom': '1408px', // Custom screen size between extra-large and 2xl
+        '610px': '610px',
+        '610px': '610px',
       },
     },
   },

@@ -11,7 +11,6 @@ function DoubledInputField({ isDoubledColumn = false, onChange1, onChange2, fiel
                         onClick={handleRadioClick}
                         selectedOption={selectedOption === "checkbox1"}
                         idName="checkbox1"
-                        fieldWidth="100"
                         fieldName={fieldName1}
                         fieldPlaceholder={fieldPlaceholder1}
                     />
@@ -19,14 +18,14 @@ function DoubledInputField({ isDoubledColumn = false, onChange1, onChange2, fiel
                         onClick={handleRadioClick}
                         selectedOption={selectedOption === "checkbox2"}
                         idName="checkbox2"
-                        fieldWidth="100"
                         fieldName={fieldName2}
                         fieldPlaceholder={fieldPlaceholder2}
                     />
                 </div>
             ) : (
-                <div className="w-full flex justify-between mt-[18px]">
+                <div className="w-full flex sm-custom:flex-row flex-col justify-between mt-[18px]">
                     <InputBox isDoubled={true} fieldType={fieldType1} fieldName={fieldName1} fieldPlaceholder={fieldPlaceholder1} />
+                    <div className='md:mt-0 mt-4'></div>
                     <InputBox isDoubled={true} fieldType={fieldType2} fieldName={fieldName2} fieldPlaceholder={fieldPlaceholder2} />
                 </div>
             )}
