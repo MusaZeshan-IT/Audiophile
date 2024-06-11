@@ -21,8 +21,8 @@ function Recommendation({ currentProduct }) {
 
     return (
         <div className="2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 w-full flex flex-col mt-32">
-            <h1 className='mx-auto text-[32px] font-black tracking-[0.5px] mb-16'>YOU MAY ALSO LIKE</h1>
-            <div className='flex md:flex-row flex-col 2xl:gap-12 xl-custom:gap-12 xl:gap-10 lg-custom:gap-8 md:gap-7 gap-y-[220px]'>
+            <h1 className='mx-auto lg:text-[32px] md-custom:text-[30px] md:text-[28px] sm-custom:text-[26px] text-[24px] font-black tracking-[0.5px] sm:mb-16 xs:mb-14 mb-12 text-center'>YOU MAY ALSO LIKE</h1>
+            <div className='flex md:flex-row flex-col 2xl:gap-12 xl-custom:gap-12 xl:gap-10 lg-custom:gap-8 md:gap-7 sm-custom:gap-y-[220px] sm:gap-y-[200px] xs-custom:gap-y-[180px] 2xs:gap-y-[220px] gap-y-[170px]'>
                 {recommendedProducts.map((product) => (
                     <div key={product.name} className='h-[340px] flex flex-col w-full'>
                         <img className='h-full lg:block xs-custom:hidden block rounded-lg' src={product.image} alt={product.name} />

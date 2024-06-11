@@ -13,7 +13,7 @@ function HomeCardBig2({ pathName, height, titleSize, titleColor, productImage, t
                 <h2 className='text-center text-6xl sm-custom:text-black text-[rgb(255,255,255)] drop-shadow-2xl font-black' style={{ marginBottom: '35px', fontSize: titleSize, letterSpacing: titleLetterSpacing }}>
                     {titleName}
                 </h2>
-                <Link to=''>
+                <Link to={pathName}>
                     <button
                         onMouseEnter={e => {
                             e.currentTarget.style.backgroundColor = 'white'

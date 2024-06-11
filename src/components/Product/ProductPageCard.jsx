@@ -12,7 +12,7 @@ function ProductPageCard({ productId, productTitle, productImageVertical, produc
     }
 
     return (
-        <div className='xl-custom:gap-x-28 xl:gap-x-24 lg-custom:gap-x-20 lg:gap-x-16 gap-x-12 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex md:flex-row flex-col md:h-[580px] mb-32'>
+        <div className='xl-custom:gap-x-28 xl:gap-x-24 lg-custom:gap-x-20 lg:gap-x-16 gap-x-12 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex md:flex-row flex-col md:h-[580px] md:mb-32 sm:mb-28 mb-24'>
             <div className='lg:w-[55%] md-custom:w-[58%] md:w-[48%] w-full rounded-lg grid place-items-center'>
                 <img className='lg:h-full md-custom:block xs:hidden block h-[90%] w-full rounded-lg' src={productImage} alt={productTitle} />
                 <img className='lg:h-full md-custom:hidden md:block hidden h-[90%] w-full rounded-lg' src={productImageVertical} alt={productTitle} />
@@ -23,7 +23,7 @@ function ProductPageCard({ productId, productTitle, productImageVertical, produc
                     <strong className='tracking-[10px] font-normal text-[#d87d4a] text-[15px] md:mt-0 xs:mt-10 mt-5 mb-4'>NEW PRODUCT</strong>
                     : null
                 }
-                <h2 className='md:text-start xs:text-center text-start lg:text-[40px] md-custom:text-[38px] md:text-[35px] text-[34px] tracking-[2px] leading-[45px] font-black mb-7 sm-custom:w-[300px] w-full'>{productTitle}</h2>
+                <h2 className='md:text-start xs:text-center text-start lg:leading-[45px] xs:leading-10 leading-9 lg:text-[40px] md-custom:text-[38px] md:text-[35px] xs-custom:text-[34px] xs:text-[33px] 2xs-custom:text-[32px] 2xs:text-[31px] text-[30px] tracking-[2px] font-black mb-7 sm-custom:w-[300px] w-full'>{productTitle}</h2>
                 <p className='md:text-start xs:text-center text-start text-[15.8px] mb-5 leading-[24px] tracking-[-0.01em] text-[rgba(0,0,0,0.58)] w-11/12'>{productDesc}</p>
                 <p className='md:text-lg text-xl md:mt-0 mt-6 font-black tracking-[1.5px]'>$ {handlePrice()}</p>
                 <div className='flex md:mt-9 mt-7'>
