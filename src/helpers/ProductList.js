@@ -11,6 +11,7 @@ import yx1 from '../assets/earphones/YX1/yx1.jpg'
 
 
 // TABLET IMAGES
+// HORIZONTAL
 // Headphones
 import xx99MarkTwoTablet from '../assets/headphones/XX99-Mark-Two/xx99-mark-two-tab.jpg'
 import xx99MarkOneTablet from '../assets/headphones/XX99-Mark-One/xx99-mark-one-tab.jpg'
@@ -20,6 +21,15 @@ import zx9Tablet from '../assets/speakers/ZX9/zx9-tab.jpg'
 import zx7Tablet from '../assets/speakers/ZX7/zx7-tab.jpg'
 // Earphones
 import yx1Tablet from '../assets/earphones/YX1/yx1-tab.jpg'
+
+// VERTICAL
+// Headphones
+import xx99MarkTwoTabletVertical from '../assets/headphones/XX99-Mark-Two/xx99-mark-two-tab-vertical.jpg'
+import xx99MarkOneTabletVertical from '../assets/headphones/XX99-Mark-One/xx99-mark-one-tab-vertical.jpg'
+import xx59TabletVertical from '../assets/headphones/XX59/xx59-tab-vertical.jpg'
+// Speakers
+import zx9TabletVertical from '../assets/speakers/ZX9/zx9-tab-vertical.jpg'
+import zx7TabletVertical from '../assets/speakers/ZX7/zx7-tab-vertical.jpg'
 
 
 // Importing PRODUCT GALLERY IMAGES
@@ -60,6 +70,7 @@ const ProductList = [
         urlName: "xx99-mark-2",
         image: xx99MarkTwo,
         tabletImage: xx99MarkTwoTablet,
+        tabletImageVertical: xx99MarkTwoTabletVertical,
         galleryImages: [xx99MarkTwoGalleryImg1, xx99MarkTwoGalleryImg2, xx99MarkTwoGalleryImg3],
         price: 2999,
         isNew: true,
@@ -100,6 +111,7 @@ const ProductList = [
         urlName: "xx99-mark-1",
         image: xx99MarkOne,
         tabletImage: xx99MarkOneTablet,
+        tabletImageVertical: xx99MarkOneTabletVertical,
         galleryImages: [xx99MarkOneGalleryImg1, xx99MarkOneGalleryImg2, xx99MarkOneGalleryImg3],
         price: 1750,
         isNew: false,
@@ -135,6 +147,7 @@ const ProductList = [
         urlName: "xx59",
         image: xx59,
         tabletImage: xx59Tablet,
+        tabletImageVertical: xx59TabletVertical,
         galleryImages: [xx59GalleryImg1, xx59GalleryImg2, xx59GalleryImg3],
         price: 899,
         isNew: false,
@@ -170,6 +183,7 @@ const ProductList = [
         urlName: "zx9",
         image: zx9,
         tabletImage: zx9Tablet,
+        tabletImageVertical: zx9TabletVertical,
         galleryImages: [zx9GalleryImg1, zx9GalleryImg2, zx9GalleryImg3],
         price: 4500,
         isNew: true,
@@ -209,6 +223,7 @@ const ProductList = [
         urlName: "zx7",
         image: zx7,
         tabletImage: zx7Tablet,
+        tabletImageVertical: zx7TabletVertical,
         galleryImages: [zx7GalleryImg1, zx7GalleryImg2, zx7GalleryImg3],
         price: 3500,
         isNew: false,
