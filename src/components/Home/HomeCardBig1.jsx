@@ -25,9 +25,7 @@ function HomeCardBig1({ pathName, height, bgColor, titleSize, titleColor, produc
                         {titleName}
                     </h2>
                     <p className='lg:text-start text-center xs-custom:w-[354px] w-72 text-gray-200 mt-6 lg:text-sm text-[13.5px] tracking-[0.3px] leading-6 lg:mb-10 mb-14'>
-                        Upgrade to premium speakers that are
-                        phenomenally built to deliver truly remarkable
-                        sound.
+                        Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
                     </p>
                     <CTA pathname={pathName} bgColor='rgb(25,25,25)' btnTextColor='white' hoverBgColor='rgb(76, 76, 76)' />
                 </div>
