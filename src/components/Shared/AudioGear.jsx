@@ -8,9 +8,15 @@ function AudioGear() {
             <div className='my-32 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex justify-center'>
                 <div className="w-full flex lg:flex-row flex-col-reverse items-center lg:justify-between">
                     <div className="xl-custom:w-[40%] lg:w-[45%] w-[80%] lg:block flex flex-col items-center">
-                        <h2 className='lg:text-start text-center lg-custom:text-5xl lg:text-[44px] sm:text-[40px] xs-custom:text-[36px] xs:text-[34px] text-[30px] font-black tracking-[3px] leading-[1.1] lg:w-[500px]'>
-                            <span>BRINGING YOU THE</span>
+                        <h2 className='lg:hidden lg:text-start text-center lg-custom:text-5xl lg:text-[44px] sm:text-[40px] xs-custom:text-[36px] xs:text-[34px] text-[30px] font-black tracking-[3px] leading-[1.1] lg:w-[500px]'>
+                            BRINGING YOU THE
                             <span className='text-orange-600 mx-[10px]'>BEST</span>
+                            AUDIO GEAR
+                        </h2>
+                        <h2 className='lg:block hidden lg:text-start text-center lg-custom:text-5xl lg:text-[44px] sm:text-[40px] xs-custom:text-[36px] xs:text-[34px] text-[30px] font-black tracking-[3px] leading-[1.1] lg:w-[500px]'>
+                            BRINGING YOU THE
+                            <br />
+                            <span className='text-orange-600 me-[10px]'>BEST</span>
                             AUDIO GEAR
                         </h2>
                         <p className='text-gray-500 lg:text-start text-center lg-custom:text-[17px] md:text-[16px] sm:text-[16px] xs:text-[15px] text-[14px] tracking-[0.2px] leading-[26px] mt-8'>
