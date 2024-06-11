@@ -1,4 +1,4 @@
-// Importing Product Images
+// DESKTOP AND MOBILE IMAGES
 // Headphones
 import xx99MarkTwo from '../assets/headphones/XX99-Mark-Two/xx99-mark-two.jpg'
 import xx99MarkOne from '../assets/headphones/XX99-Mark-One/xx99-mark-one.jpg'
@@ -9,7 +9,20 @@ import zx7 from '../assets/speakers/ZX7/zx7.jpg'
 // Earphones
 import yx1 from '../assets/earphones/YX1/yx1.jpg'
 
-// Importing Product Gallery Images
+
+// TABLET IMAGES
+// Headphones
+import xx99MarkTwoTablet from '../assets/headphones/XX99-Mark-Two/xx99-mark-two-tab.jpg'
+import xx99MarkOneTablet from '../assets/headphones/XX99-Mark-One/xx99-mark-one-tab.jpg'
+import xx59Tablet from '../assets/headphones/XX59/xx59-tab.jpg'
+// Speakers
+import zx9Tablet from '../assets/speakers/ZX9/zx9-tab.jpg'
+import zx7Tablet from '../assets/speakers/ZX7/zx7-tab.jpg'
+// Earphones
+import yx1Tablet from '../assets/earphones/YX1/yx1-tab.jpg'
+
+
+// Importing PRODUCT GALLERY IMAGES
 // Headphone 1 Gallery
 import xx99MarkTwoGalleryImg1 from '../assets/headphones/XX99-Mark-Two/gallery/img-1.jpg'
 import xx99MarkTwoGalleryImg2 from '../assets/headphones/XX99-Mark-Two/gallery/img-2.jpg'
@@ -46,6 +59,7 @@ const ProductList = [
         evenShorterName: "XX99 MK II",
         urlName: "xx99-mark-2",
         image: xx99MarkTwo,
+        tabletImage: xx99MarkTwoTablet,
         galleryImages: [xx99MarkTwoGalleryImg1, xx99MarkTwoGalleryImg2, xx99MarkTwoGalleryImg3],
         price: 2999,
         isNew: true,
@@ -85,6 +99,7 @@ const ProductList = [
         evenShorterName: "XX99 MK I",
         urlName: "xx99-mark-1",
         image: xx99MarkOne,
+        tabletImage: xx99MarkOneTablet,
         galleryImages: [xx99MarkOneGalleryImg1, xx99MarkOneGalleryImg2, xx99MarkOneGalleryImg3],
         price: 1750,
         isNew: false,
@@ -119,6 +134,7 @@ const ProductList = [
         shortName: "XX59",
         urlName: "xx59",
         image: xx59,
+        tabletImage: xx59Tablet,
         galleryImages: [xx59GalleryImg1, xx59GalleryImg2, xx59GalleryImg3],
         price: 899,
         isNew: false,
@@ -153,6 +169,7 @@ const ProductList = [
         shortName: "ZX9",
         urlName: "zx9",
         image: zx9,
+        tabletImage: zx9Tablet,
         galleryImages: [zx9GalleryImg1, zx9GalleryImg2, zx9GalleryImg3],
         price: 4500,
         isNew: true,
@@ -191,6 +208,7 @@ const ProductList = [
         shortName: "ZX7",
         urlName: "zx7",
         image: zx7,
+        tabletImage: zx7Tablet,
         galleryImages: [zx7GalleryImg1, zx7GalleryImg2, zx7GalleryImg3],
         price: 3500,
         isNew: false,
@@ -229,6 +247,7 @@ const ProductList = [
         shortName: "YX1",
         urlName: "yx1",
         image: yx1,
+        tabletImage: yx1Tablet,
         galleryImages: [yx1GalleryImg1, yx1GalleryImg2, yx1GalleryImg3],
         price: 599,
         isNew: true,

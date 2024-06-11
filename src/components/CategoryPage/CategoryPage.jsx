@@ -17,22 +17,24 @@ function Headphones() {
     return (
         <>
             <HeroShared titleName={categoryNameToUpperCase()} />
-            {categoryProductsList.map((categoryProduct, index) => {
-                if (index === 0) {
-                    return (
-                        <ProductCard productPath={categoryProduct.urlName} key={index} isLabel={true} productDesc={categoryProduct.desc} productTitle={categoryProduct.name} productImage={categoryProduct.image} isImageOnLeft={true} />
-                    )
-                } else if (index === 1) {
-                    return (
-                        <ProductCard productPath={categoryProduct.urlName} key={index} productDesc={categoryProduct.desc} productTitle={categoryProduct.name} productImage={categoryProduct.image} isImageOnLeft={false} />
-                    )
-                } else {
-                    return (
-                        <ProductCard productPath={categoryProduct.urlName} key={index} productDesc={categoryProduct.desc} productTitle={categoryProduct.name} productImage={categoryProduct.image} isImageOnLeft={true} />
-                    )
-                }
-            })}
-            <NavList marginTop="120px" />
+            <div className=' 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
+                {categoryProductsList.map((categoryProduct, index) => {
+                    if (index === 0) {
+                        return (
+                            <ProductCard productTabImage={categoryProduct.tabletImage} productPath={categoryProduct.urlName} key={index} isLabel={true} productDesc={categoryProduct.desc} productTitle={categoryProduct.name} productImage={categoryProduct.image} isImageOnLeft={true} />
+                        )
+                    } else if (index === 1) {
+                        return (
+                            <ProductCard productTabImage={categoryProduct.tabletImage} productPath={categoryProduct.urlName} key={index} productDesc={categoryProduct.desc} productTitle={categoryProduct.name} productImage={categoryProduct.image} isImageOnLeft={false} />
+                        )
+                    } else {
+                        return (
+                            <ProductCard productTabImage={categoryProduct.tabletImage} productPath={categoryProduct.urlName} key={index} productDesc={categoryProduct.desc} productTitle={categoryProduct.name} productImage={categoryProduct.image} isImageOnLeft={true} />
+                        )
+                    }
+                })}
+            </div>
+            <NavList marginTop="200px" />
             <AudioGear />
         </>
     )

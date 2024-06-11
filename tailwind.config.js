@@ -15,6 +15,8 @@ export default {
         // '2xl': '1536px',
 
         // Custom screen sizes
+        '2xs': '360px',
+        '2xs-custom': '420px',
         'xs': '480px', // Custom screen size between extra-small and small
         'xs-custom': '560px', // Custom screen size between extra-small and small
         'sm-custom': '704px', // Custom screen size between small and medium
