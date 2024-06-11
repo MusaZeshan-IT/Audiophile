@@ -9,9 +9,9 @@ function Features({ featurePara1, featurePara2, includedItems }) {
                 <p className='mt-6 w-11/12 text-[rgb(150,147,147)] leading-6 text-[15.5px] tracking-[0.2px]'>{featurePara2}</p>
             </div>
             <div className='lg:w-[32%] w-full flex flex-col lg:mt-0 mt-12'>
-                <div className='lg:block flex md-custom:gap-x-48 md:gap-x-44 sm-custom:gap-x-36 xs-custom:gap-x-28 xs:gap-x-16'>
+                <div className='lg:block flex xs:flex-row flex-col md-custom:gap-x-48 md:gap-x-44 sm-custom:gap-x-36 xs-custom:gap-x-28 xs:gap-x-16'>
                     <h2 className='text-3xl tracking-[2px] font-black'>IN THE BOX</h2>
-                    <div className='lg:mt-6 mt-0'>
+                    <div className='lg:mt-6 xs:mt-0 mt-5'>
                         {includedItems.map((item, index) => (
                             <div className='mb-[8px]'>
                                 <span className='font-semibold text-[#d87d4a]'>{item.quantity}</span>
