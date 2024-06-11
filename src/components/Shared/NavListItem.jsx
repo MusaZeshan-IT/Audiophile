@@ -5,7 +5,7 @@ function NavListItem({ name, image, path, handleCloseMenu, isNavMenu = false }) 
     return (
         <>
             {isNavMenu === false ? (
-                <div className='w-[33%] bg-[rgb(238,238,238)] xl-custom:h-[190px] h-[180px] rounded-lg shadow-md shadow-gray-300'>
+                <div className='w-full bg-[rgb(238,238,238)] xl-custom:h-[190px] h-[180px] rounded-lg shadow-md shadow-gray-300'>
                     <Link to={path}>
                         <div className='flex flex-col items-center'>
                             <img src={image} alt="" className='h-44 w-52 relative bottom-16' />

@@ -8,7 +8,7 @@ function AudioGear() {
             <div className='my-32 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex justify-center'>
                 <div className="w-full flex lg:flex-row flex-col-reverse items-center lg:justify-between">
                     <div className="xl-custom:w-[40%] lg:w-[45%] w-[80%] lg:block flex flex-col items-center">
-                        <h2 className='lg:text-start text-center lg-custom:text-5xl lg:text-[44px] sm:text-[40px] text-[36px] font-black tracking-[3px] leading-[1.1] lg:w-[500px]'>
+                        <h2 className='lg:text-start text-center lg-custom:text-5xl lg:text-[44px] sm:text-[40px] xs-custom:text-[36px] text-[34px] font-black tracking-[3px] leading-[1.1] lg:w-[500px]'>
                             <span>BRINGING YOU THE</span>
                             <span className='text-orange-600 mx-[10px]'>BEST</span>
                             AUDIO GEAR

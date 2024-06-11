@@ -7,8 +7,8 @@ import Speakers from '../../assets/category-speakers.png'
 function NavList({ marginTop }) {
     return (
         <section>
-            <div style={{ marginTop: marginTop }} className='w-full 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 h-52 flex justify-center items-center mb-32'>
-                <div className='w-full h-full flex justify-between 2xl:gap-12 xl-custom:gap-12 xl:gap-10 lg-custom:gap-8 gap-7'>
+            <div style={{ marginTop: marginTop }} className='w-full 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex justify-center items-center mb-32'>
+                <div className='w-full h-full flex xs-custom:flex-row flex-col xs-custom:justify-between 2xl:gap-12 xl-custom:gap-12 xl:gap-10 lg-custom:gap-8 xs-custom:gap-7 gap-y-20'>
                     <NavListItem name="HEADPHONES" image={Headphones} path="/headphones" />
                     <NavListItem name="SPEAKERS" image={Speakers} path="/speakers" />
                     <NavListItem name="EARPHONES" image={Earphones} path="/earphones" />
