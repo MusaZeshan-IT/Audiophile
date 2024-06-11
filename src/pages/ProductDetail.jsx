@@ -24,7 +24,7 @@ function ProductDetail() {
             <Features featurePara1={product.featuresPara1} featurePara2={product.featuresPara2} includedItems={product.includedItems} />
             <ProductGallery productImg1={product.galleryImages[0]} productImg2={product.galleryImages[1]} productImg3={product.galleryImages[2]} />
             <Recommendation currentProduct={product} />
-            <NavList marginTop="380px" />
+            <NavList isProductPage={true} />
             <AudioGear />
         </div>
     )

@@ -23,7 +23,7 @@ function ProductPageCard({ productId, productTitle, productImageVertical, produc
                     <strong className='tracking-[10px] font-normal text-[#d87d4a] text-[15px] md:mt-0 xs:mt-10 mt-5 mb-4'>NEW PRODUCT</strong>
                     : null
                 }
-                <h2 className='md:text-start xs:text-center text-start lg:text-[40px] md-custom:text-[38px] md:text-[35px] text-[34px] tracking-[2px] leading-[45px] font-black mb-7 w-[400px]'>{productTitle}</h2>
+                <h2 className='md:text-start xs:text-center text-start lg:text-[40px] md-custom:text-[38px] md:text-[35px] text-[34px] tracking-[2px] leading-[45px] font-black mb-7 sm-custom:w-[300px] w-full'>{productTitle}</h2>
                 <p className='md:text-start xs:text-center text-start text-[15.8px] mb-5 leading-[24px] tracking-[-0.01em] text-[rgba(0,0,0,0.58)] w-11/12'>{productDesc}</p>
                 <p className='md:text-lg text-xl md:mt-0 mt-6 font-black tracking-[1.5px]'>$ {handlePrice()}</p>
                 <div className='flex md:mt-9 mt-7'>
