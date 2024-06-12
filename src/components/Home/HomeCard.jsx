@@ -15,7 +15,7 @@ function Card({ pathName, isBgImage = false, bgImage, BestGearImage, BestGearIma
         <>
             {isAudioCard ? (
                 <>
-                    <div className={`lg:h-[580px] h-auto lg:w-[90%] w-auto ${mainContDefaultCls}`} style={{ padding: padding, justifyContent: 'start', width: width }}>
+                    <div className={`xl:h-[640px] lg:h-[580px] h-auto lg:w-[90%] w-auto ${mainContDefaultCls}`} style={{ padding: padding, justifyContent: 'start', width: width }}>
                         <img className='lg:block xs:hidden block h-full w-full' src={BestGearImage} alt="" />
                         <img className='lg:hidden xs:block hidden h-full w-full' src={BestGearImageTablet} alt="" />
                         <div className='h-full flex flex-col items-start justify-center z-[1]'>
