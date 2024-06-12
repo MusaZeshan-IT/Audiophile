@@ -19,11 +19,9 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(true)
-    console.log('Menu opened');
   };
   const handleCloseMenu = () => {
     setShowMenu(false)
-    console.log('Menu closed');
   };
 
   return (

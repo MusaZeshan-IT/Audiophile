@@ -10,7 +10,6 @@ function CTAButton({ name, formRef, pathname, functionName, buttonType }) {
             formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
             formRef.current.reset();
         }
-        console.log('Form submitted'); // This should log when the button is clicked
         functionName();
     };
 
