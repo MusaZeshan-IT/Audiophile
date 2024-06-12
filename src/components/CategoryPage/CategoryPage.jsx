@@ -17,7 +17,7 @@ function Headphones() {
     return (
         <>
             <HeroShared titleName={categoryNameToUpperCase()} />
-            <div className=' 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
+            <div className='2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
                 {categoryProductsList.map((categoryProduct, index) => {
                     if (index === 0) {
                         return (
