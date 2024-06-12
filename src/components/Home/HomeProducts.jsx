@@ -14,7 +14,7 @@ function HomeProducts() {
                 <div className='w-full'>
                     <HomeCardBig1 isResponsive={true} pathName="./speakers/zx9" productImage={HomeZX9Speaker} bgColor="#d87d4a" titleColor="white" titleLetterSpacing='7px' titleName="ZX9 SPEAKER" />
                     <HomeCardBig2 pathName="./speakers/zx7" productImage={HomeZX7Speaker} mainContImg={false} titleName="ZX7 SPEAKER" titleColor="black" titleSize="30px" imageOnLeft={false} />
-                    <div className="grid md:grid-cols-2 grid-rows-2 xl:gap-8 lg-custom:gap-7 lg:gap-6 gap-5">
+                    <div className="grid md:grid-cols-2 md:grid-rows-1 grid-rows-2 xl:gap-8 lg-custom:gap-7 lg:gap-6 gap-5">
                         <Card isBgImage={true} bgImage={HomeProductEarphones} />
                         <Card pathName="./earphones/yx1" isHeading={true} titleName="YX1 EARPHONES" isButton={true} padding="96px" />
                     </div>
