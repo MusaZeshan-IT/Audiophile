@@ -30,6 +30,8 @@ import xx59TabletVertical from '../assets/headphones/XX59/xx59-tab-vertical.jpg'
 // Speakers
 import zx9TabletVertical from '../assets/speakers/ZX9/zx9-tab-vertical.jpg'
 import zx7TabletVertical from '../assets/speakers/ZX7/zx7-tab-vertical.jpg'
+// Earphones
+import yx1TabletVertical from '../assets/earphones/YX1/yx1-tab-vertical.jpg'
 
 
 // Importing PRODUCT GALLERY IMAGES
@@ -263,6 +265,7 @@ const ProductList = [
         urlName: "yx1",
         image: yx1,
         tabletImage: yx1Tablet,
+        tabletImageVertical: yx1TabletVertical,
         galleryImages: [yx1GalleryImg1, yx1GalleryImg2, yx1GalleryImg3],
         price: 599,
         isNew: true,
