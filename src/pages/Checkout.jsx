@@ -11,13 +11,13 @@ import SuccessModal from '../components/Checkout/SuccessModal';
 function Checkout() {
     const [showModal, setShowModal] = useState(false);
     const handleShowModal = () => {
-        // if (formRef.current.reportValidity()) {
-        setShowModal(true);
-        // }
+        if (formRef.current.reportValidity()) {
+            setShowModal(true);
+        }
     }
     const handleCloseModal = () => setShowModal(false);
 
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, totalItemsInCart } = useContext(CartContext);
     const [selectedOption, setSelectedOption] = useState('checkbox1');
     const formRef = useRef(null)
 
@@ -144,6 +144,9 @@ function Checkout() {
                                     </div>
                                 </div>
                             ))}
+                            {totalItemsInCart < 1 && (
+                                <p className='text-center text-gray-500 text-[15.2px] font-semibold tracking-wider'>No items in cart</p>
+                            )}
                             <div className='w-full flex justify-between mt-8'>
                                 <span className='text-gray-500 text-[16px]'>TOTAL</span>
                                 <span className='text-[rgb(27,27,27)] text-[17.5px] font-black tracking-[0.7px]'>
@@ -172,7 +175,11 @@ function Checkout() {
                                     {handleValue(handleGrandTotal)}
                                 </span>
                             </div>
-                            <CTAButton formRef={formRef} buttonType='submit' functionName={handleShowModal} name="CONTINUE & PAY" />
+                            {totalItemsInCart > 1 ? (
+                                <CTAButton formRef={formRef} buttonType='submit' functionName={handleShowModal} name="CONTINUE & PAY" />
+                            ) : (
+                                <CTAButton isDisabled={true} formRef={formRef} buttonType='submit' functionName={handleShowModal} name="CONTINUE & PAY" />
+                            )}
                         </div>
                     </div>
                 </div>
