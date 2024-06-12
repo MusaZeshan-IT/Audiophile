@@ -11,9 +11,9 @@ import SuccessModal from '../components/Checkout/SuccessModal';
 function Checkout() {
     const [showModal, setShowModal] = useState(false);
     const handleShowModal = () => {
-        if (formRef.current.reportValidity()) {
-            setShowModal(true);
-        }
+        // if (formRef.current.reportValidity()) {
+        setShowModal(true);
+        // }
     }
     const handleCloseModal = () => setShowModal(false);
 

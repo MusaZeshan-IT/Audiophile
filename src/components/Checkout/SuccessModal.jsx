@@ -43,13 +43,13 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
     }
 
     return (
-        <div className='z-30 fixed inset-0 bg-black bg-opacity-[0.5] flex justify-center items-center'>
-            <div ref={modalRef} className='overflow-auto bg-white min-h-48 max-h-[93vh] w-[550px] rounded-md p-12 pointer-events-auto'>
+        <div className='z-30 fixed inset-0 bg-black bg-opacity-[0.5] flex justify-center items-center sm-custom:px-0 px-4'>
+            <div ref={modalRef} className='overflow-auto bg-white min-h-48 max-h-[93vh] w-[550px] rounded-md xs:p-12 2xs-custom:p-10 2xs:p-8 p-6 pointer-events-auto'>
                 <img src={iconChecked} alt="" />
-                <h1 className='font-black tracking-wide text-[33px] leading-[37px] mt-5 text-[rgb(25,25,25)]'>THANK YOU <br /> FOR YOUR ORDER</h1>
+                <h1 className='font-black tracking-wide md:text-[33px] sm-custom:text-[32px] sm:text-[31px] xs-custom:text-[30px] xs:text-[29px] 2xs-custom:text-[28px] 2xs:text-[27px] text-[24px] mt-5 text-[rgb(25,25,25)] md:leading-10 sm:leading-9 leading-8'>THANK YOU <br /> FOR YOUR ORDER</h1>
                 <p className='text-[rgb(161,161,161)] text-[15px] mt-6 tracking-[0.15px]'>You will receive an email confirmation shortly.</p>
-                <div className='flex mb-10 mt-8'>
-                    <div className='w-[55%] p-5 min-h-36 flex flex-col justify-center bg-[rgb(241,241,241)] rounded-s-lg'>
+                <div className='flex md:flex-row flex-col mb-10 mt-8'>
+                    <div className='md:w-[55%] w-full p-5 min-h-36 flex flex-col justify-center bg-[rgb(241,241,241)] md:rounded-s-lg md:rounded-tr-none rounded-t-lg'>
                         {showAllProducts ? (
                             productAddedToCartList.map((product) => (
                                 <div key={product.id} className='flex mb-6 justify-between items-center'>
@@ -111,7 +111,7 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
                         )}
                     </div>
                     {showAllProducts ? (
-                        <div className='w-[45%] p-8 bg-[rgb(25,25,25)] rounded-e-lg flex flex-col justify-end'>
+                        <div className='md:w-[45%] w-full p-8 bg-[rgb(25,25,25)] md:rounded-e-lg md:rounded-bl-none rounded-b-lg flex flex-col justify-end'>
                             <h3 className='text-[rgb(150,147,147)] font-semibold text-[15px] tracking-wide'>GRAND TOTAL</h3>
                             <p className='text-white font-semibold tracking-wider text-[14.5px] mt-2'>
                                 <span className='me-[3.6px]'>$</span>
@@ -119,7 +119,7 @@ function SuccessModal({ handleCloseModal, showModal, grandTotal, handleValue }) 
                             </p>
                         </div>
                     ) : (
-                        <div className='w-[45%] p-8 bg-[rgb(25,25,25)] rounded-e-lg flex flex-col justify-center'>
+                        <div className='md:w-[45%] w-full p-8 bg-[rgb(25,25,25)] md:rounded-e-lg md:rounded-bl-none rounded-b-lg flex flex-col justify-center'>
                             <h3 className='text-[rgb(150,147,147)] font-semibold text-[15px] tracking-wide'>GRAND TOTAL</h3>
                             <p className='text-white font-semibold tracking-wider text-[14.5px] mt-2'>
                                 <span className='me-[3.6px]'>$</span>
