@@ -51,8 +51,8 @@ function Modal({ handleCloseModal, showModal }) {
     }
 
     return (
-        <div className='z-30 fixed inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start'>
-            <div ref={modalRef} className='me-48 overflow-auto mt-32 bg-white min-h-48 max-h-[80vh] w-[370px] rounded-md p-8 pointer-events-auto'>
+        <div className='z-30 fixed inset-0 bg-black bg-opacity-[0.4] flex justify-end items-start 2xs-custom:px-0 px-4'>
+            <div ref={modalRef} className='md:me-48 mx-auto overflow-auto mt-32 bg-white min-h-48 max-h-[80vh] 2xs-custom:w-[370px] w-full rounded-md xs:p-8 2xs-custom:p-7 p-6 pointer-events-auto'>
                 {totalItemsInCart > 0 ? (
                     <div>
                         <div className='w-full flex justify-between'>
@@ -70,16 +70,20 @@ function Modal({ handleCloseModal, showModal }) {
                             {productAddedToCartList.map((product) => (
                                 <div key={product.id} className='flex mb-6 justify-between items-center'>
                                     <div className='flex'>
-                                        <img className='h-16 w-16 rounded-lg' src={product.image} alt={product.name} />
-                                        <div className='flex flex-col ml-4 justify-center ms-[9px]'>
-                                            <p className='text-[rgb(44,44,44)] font-black tracking-[1px] text-[15.3px]'>{product.shortName}</p>
+                                        <img className='2xs:h-16 2xs:w-16 w-14 h-14 rounded-lg' src={product.image} alt={product.name} />
+                                        <div className='flex flex-col me-4 justify-center ms-[9px]'>
+                                            {product.evenShorterName ? (
+                                                <p className='text-[rgb(44,44,44)] font-black tracking-[1px] xs:text-[15.3px] 2xs-custom:text-[14.5px] text-[14px]'>{product.evenShorterName}</p>
+                                            ) : (
+                                                <p className='text-[rgb(44,44,44)] font-black tracking-[1px] xs:text-[15.3px] 2xs-custom:text-[14.5px] text-[14px]'>{product.shortName}</p>
+                                            )}
                                             <p className='mt-1 text-[rgb(160,160,160)] font-semibold tracking-widest text-[13px]'>
                                                 <span className='me-[1.6px]'>$</span>
                                                 {handlePrice(product)}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className='w-24 h-8'>
+                                    <div className='xs:w-24 2xs-custom:w-[90px] 2xs:w-[82px] w-[76px] h-8'>
                                         <SetCartItems productId={product.id} />
                                     </div>
                                 </div>
