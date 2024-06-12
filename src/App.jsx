@@ -9,6 +9,8 @@ import Footer from './components/Common/Footer'
 import Modal from './components/Common/Modal'
 import NavMenuModal from './components/Common/NavMenuModal'
 import CategoryPage from './components/CategoryPage/CategoryPage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
     <div className="app">
       <CartContextProvider>
         <Router>
+          <ToastContainer />
           <Modal showModal={showModal} handleCloseModal={handleCloseModal} />
           <NavMenuModal showMenu={showMenu} handleCloseMenu={handleCloseMenu} handleCloseModal={handleCloseModal} />
           <Navbar showMenu={showMenu} handleShowMenu={handleShowMenu} handleCloseMenu={handleCloseMenu} handleShowModal={handleShowModal} />

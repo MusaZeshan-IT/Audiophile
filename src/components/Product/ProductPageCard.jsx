@@ -1,14 +1,37 @@
 import React from 'react'
 import ToCartCTA from '../Cart/ToCartCTA'
 import SetCartItems from '../Cart/SetCartItems';
+import { toast } from 'react-toastify';
 
-function ProductPageCard({ productId, productTitle, productImageVertical, productImageHorizontal, productImage, productDesc, productPrice, isLabel = false }) {
+function ProductPageCard({ productId, productTitle, productShortTitle, productShorterTitle, productImageVertical, productImageHorizontal, productImage, productDesc, productPrice, isLabel = false }) {
     function handlePrice() {
         if (productPrice > 999) {
             return productPrice.toLocaleString();
         } else {
             return productPrice;
         }
+    }
+
+    function productToastTitle() {
+        let message = '';
+        if (productShorterTitle) {
+            message = `Item \'${productShorterTitle}\' added to cart`
+        } else {
+            message = `Item \'${productShortTitle}\' added to cart`
+        }
+        return message
+    }
+
+    const handleAddToCart = () => {
+        toast.success(productToastTitle(), {
+            position: "top-left",
+            autoClose: 1000,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     return (
@@ -28,7 +51,7 @@ function ProductPageCard({ productId, productTitle, productImageVertical, produc
                 <p className='md:text-lg text-xl md:mt-0 mt-6 font-black tracking-[1.5px]'>$ {handlePrice()}</p>
                 <div className='flex md:mt-9 mt-7'>
                     <SetCartItems productId={productId} />
-                    <ToCartCTA productId={productId} />
+                    <ToCartCTA onClickFn={handleAddToCart} productId={productId} />
                 </div>
             </div>
         </div>

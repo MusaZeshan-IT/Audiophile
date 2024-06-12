@@ -5,6 +5,7 @@ import ShoppingCart from '../../assets/cart.svg';
 import ProductList from '../../helpers/ProductList';
 import SetCartItems from '../Cart/SetCartItemsSmall';
 import CTAButton from '../Shared/CTAButton';
+import { toast } from 'react-toastify'
 
 function Modal({ handleCloseModal, showModal }) {
     const { totalItemsInCart, removeAllItemsFromCart, cartItems } = useContext(CartContext);
@@ -24,6 +25,18 @@ function Modal({ handleCloseModal, showModal }) {
             totalAmount += actualPrice;
         }
         return totalAmount > 999 ? totalAmount.toLocaleString() : totalAmount;
+    }
+
+    const handleRemoveAllItems = () => {
+        toast.success('Cart has been emptied', {
+            position: "top-left",
+            autoClose: 1000,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     useEffect(() => {
@@ -62,7 +75,10 @@ function Modal({ handleCloseModal, showModal }) {
                                 <span className='text-[18.5px]'>{totalItemsInCart}</span>
                                 <span className='text-lg'>)</span>
                             </span>
-                            <button onClick={removeAllItemsFromCart} className='text-gray-400 tracking-wide underline'>
+                            <button onClick={() => {
+                                removeAllItemsFromCart()
+                                handleRemoveAllItems()
+                            }} className='text-gray-400 tracking-wide underline'>
                                 Remove All
                             </button>
                         </div>
