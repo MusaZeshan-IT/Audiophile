@@ -1,12 +1,11 @@
 import React from 'react'
-import HeroImage from '../../assets/hero-img.png'
 import CTA from '../Shared/ToViewCTA'
 import './Hero.css'
 
 function Hero() {
     return (
         <section>
-            <div className='bg-cont w-full bg-center 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 h-[610px] flex lg:justify-start justify-center'>
+            <div className='bg-[rgb(25,25,25)] bg-cont w-full bg-center 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 h-[610px] flex lg:justify-start justify-center'>
                 <div>
                     <div className='w-full lg:mt-40 mt-32 lg:block flex flex-col items-center'>
                         <h1 className='flex flex-col'>

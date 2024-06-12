@@ -12,7 +12,7 @@ function ProductPageCard({ productId, productTitle, productImageVertical, produc
     }
 
     return (
-        <div className='xl-custom:gap-x-28 xl:gap-x-24 lg-custom:gap-x-20 lg:gap-x-16 gap-x-12 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex md:flex-row flex-col md:h-[580px] md:mb-32 sm:mb-28 mb-24'>
+        <div className='xl-custom:gap-x-28 xl:gap-x-24 lg-custom:gap-x-20 lg:gap-x-16 gap-x-12 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5 flex md:flex-row flex-col md:h-[580px] 2xl:mb-52 xl-custom:mb-44 xl:mb-32 lg:mb-24 md:mb-20 sm:mb-32 mb-28'>
             <div className='lg:w-[55%] md-custom:w-[58%] md:w-[48%] w-full rounded-lg grid place-items-center'>
                 <img className='lg:h-full md-custom:block xs:hidden block h-[90%] w-full rounded-lg' src={productImage} alt={productTitle} />
                 <img className='lg:h-full md-custom:hidden md:block hidden h-[90%] w-full rounded-lg' src={productImageVertical} alt={productTitle} />

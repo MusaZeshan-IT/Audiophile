@@ -12,7 +12,6 @@ function Navbar({ handleShowModal, handleShowMenu, handleCloseMenu, showMenu }) 
     if (totalItemsInCart === 0) {
       return (
         <button className='' onClick={() => handleShowModal()} type="button" role='button'>
-
           <i className='fa-solid fa-cart-shopping cursor-pointer text-[20px] text-white'></i>
         </button>
       )
@@ -36,7 +35,7 @@ function Navbar({ handleShowModal, handleShowMenu, handleCloseMenu, showMenu }) 
 
   return (
     <div className='bg-[rgb(25,25,25)] 2xl:px-[135px] xl-custom:px-[130px] xl:px-32 lg-custom:px-12 lg:px-7 px-5'>
-      <div className=' text-white h-[90px] items-center w-full flex justify-between border-b border-zinc-700 py-[32.4px]'>
+      <div className='text-white h-[90px] items-center w-full flex justify-between border-b border-zinc-700 py-[32.4px]'>
         <div className="">
           <div className='flex items-center'>
             <i onClick={() => handleShowMenu()} className={`${showMenu ? 'hidden' : 'block'} fa-solid fa-bars lg:hidden cursor-pointer text-[18.5px] me-8`}></i>
