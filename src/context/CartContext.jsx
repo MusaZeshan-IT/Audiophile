@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import ProductList from "../helpers/ProductList";
-import { json } from "react-router-dom";
 
 // Creating the context
 export const CartContext = createContext();
